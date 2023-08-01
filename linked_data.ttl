@@ -12,70 +12,25 @@
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#kp
-:kp rdf:type owl:ObjectProperty ;
-    owl:inverseOf :kpdalam ;
-    rdfs:domain :RKP ;
-    rdfs:range :KP ;
-    rdfs:label "Kegiatan Prioritas" .
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#uk
+:uk rdf:type owl:ObjectProperty ;
+    owl:inverseOf :ukdari ;
+    rdfs:domain :instansi_pusat ;
+    rdfs:range :unitkerja ;
+    rdfs:label "Unit Kerja" .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#kpdalam
-:kpdalam rdf:type owl:ObjectProperty ;
-         rdfs:domain :KP ;
-         rdfs:range :RKP ;
-         rdfs:label "Kegiatan Prioritas dalam" .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#kpterkait
-:kpterkait rdf:type owl:ObjectProperty ;
-           owl:inverseOf :pnterkait ,
-                         :ppterkait ;
-           rdfs:domain [ rdf:type owl:Class ;
-                         owl:unionOf ( :PN
-                                       :PP
-                                     )
-                       ] ;
-           rdfs:range :KP ;
-           rdfs:label "Kegiatan Prioritas Terkait" .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pnmeliputimp
-:pnmeliputimp rdf:type owl:ObjectProperty ;
-              owl:inverseOf :pnterkait ;
-              rdfs:domain :PN ;
-              rdfs:range :MP ;
-              rdfs:label "Meliputi MP" .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pnterkait
-:pnterkait rdf:type owl:ObjectProperty ;
-           owl:inverseOf :ppterkait ;
-           rdfs:domain [ rdf:type owl:Class ;
-                         owl:unionOf ( :KP
-                                       :MP
-                                       :PP
-                                     )
-                       ] ;
-           rdfs:range :PN ;
-           rdfs:label "Prioritas Nasional Terkait" .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#ppterkait
-:ppterkait rdf:type owl:ObjectProperty ;
-           rdfs:domain [ rdf:type owl:Class ;
-                         owl:unionOf ( :KP
-                                       :PN
-                                     )
-                       ] ;
-           rdfs:range :PP ;
-           rdfs:label "Program Prioritas Terkait" .
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#ukdari
+:ukdari rdf:type owl:ObjectProperty ;
+        rdfs:domain :unitkerja ;
+        rdfs:range :instansi_pusat ;
+        rdfs:label "Unit Kerja dari" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt##sbrdata
 <http://www.semanticweb.org/fadil/ontologies/2023/7/ldt##sbrdata> rdf:type owl:ObjectProperty ;
-                                                                  rdfs:domain :instansi_pusat ;
-                                                                  rdfs:range :datain ;
+                                                                  rdfs:domain :datain ;
+                                                                  rdfs:range :instansi_pusat ;
                                                                   rdfs:label "Sumber Data" .
 
 
@@ -105,6 +60,34 @@
                           ] ;
               rdfs:range :datain ;
               rdfs:label "Indikator Terkait" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/kp
+:kp rdf:type owl:ObjectProperty ;
+    owl:inverseOf :kpdalam ;
+    rdfs:domain :RKP ;
+    rdfs:range :KP ;
+    rdfs:label "Kegiatan Prioritas" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/kpdalam
+:kpdalam rdf:type owl:ObjectProperty ;
+         rdfs:domain :KP ;
+         rdfs:range :RKP ;
+         rdfs:label "Kegiatan Prioritas dalam" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/kpterkait
+:kpterkait rdf:type owl:ObjectProperty ;
+           owl:inverseOf :pnterkait ,
+                         :ppterkait ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :PN
+                                       :PP
+                                     )
+                       ] ;
+           rdfs:range :KP ;
+           rdfs:label "Kegiatan Prioritas Terkait" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/mp
@@ -144,6 +127,27 @@
          rdfs:label "Prioritas Nasional dalam" .
 
 
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pnmeliputimp
+:pnmeliputimp rdf:type owl:ObjectProperty ;
+              owl:inverseOf :pnterkait ;
+              rdfs:domain :PN ;
+              rdfs:range :MP ;
+              rdfs:label "Meliputi MP" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pnterkait
+:pnterkait rdf:type owl:ObjectProperty ;
+           owl:inverseOf :ppterkait ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :KP
+                                       :MP
+                                       :PP
+                                     )
+                       ] ;
+           rdfs:range :PN ;
+           rdfs:label "Prioritas Nasional Terkait" .
+
+
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pp
 :pp rdf:type owl:ObjectProperty ;
     owl:inverseOf :ppdalam ;
@@ -157,6 +161,17 @@
          rdfs:domain :PP ;
          rdfs:range :RKP ;
          rdfs:label "Program Prioritas dalam" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/ppterkait
+:ppterkait rdf:type owl:ObjectProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :KP
+                                       :PN
+                                     )
+                       ] ;
+           rdfs:range :PP ;
+           rdfs:label "Program Prioritas Terkait" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/ssrnpn
@@ -176,6 +191,12 @@
 #################################################################
 #    Classes
 #################################################################
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#unitkerja
+:unitkerja rdf:type owl:Class ;
+           rdfs:comment "Unit kerja adalah satuan (regu) kerja." ;
+           rdfs:label "Unit Kerja" .
+
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/KP
 :KP rdf:type owl:Class ;
