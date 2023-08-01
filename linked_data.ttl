@@ -1,18 +1,85 @@
-@prefix : <http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data/> .
+@prefix : <http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data/> .
+@base <http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/> .
 
-<http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data> rdf:type owl:Ontology .
+<http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#> rdf:type owl:Ontology .
 
 #################################################################
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data#dijabarkan
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#kp
+:kp rdf:type owl:ObjectProperty ;
+    owl:inverseOf :kpdalam ;
+    rdfs:domain :RKP ;
+    rdfs:range :KP ;
+    rdfs:label "Kegiatan Prioritas" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#kpdalam
+:kpdalam rdf:type owl:ObjectProperty ;
+         rdfs:domain :KP ;
+         rdfs:range :RKP ;
+         rdfs:label "Kegiatan Prioritas dalam" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#kpterkait
+:kpterkait rdf:type owl:ObjectProperty ;
+           owl:inverseOf :pnterkait ,
+                         :ppterkait ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :PN
+                                       :PP
+                                     )
+                       ] ;
+           rdfs:range :KP ;
+           rdfs:label "Kegiatan Prioritas Terkait" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pnmeliputimp
+:pnmeliputimp rdf:type owl:ObjectProperty ;
+              owl:inverseOf :pnterkait ;
+              rdfs:domain :PN ;
+              rdfs:range :MP ;
+              rdfs:label "Meliputi MP" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pnterkait
+:pnterkait rdf:type owl:ObjectProperty ;
+           owl:inverseOf :ppterkait ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :KP
+                                       :MP
+                                       :PP
+                                     )
+                       ] ;
+           rdfs:range :PN ;
+           rdfs:label "Prioritas Nasional Terkait" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#ppterkait
+:ppterkait rdf:type owl:ObjectProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :KP
+                                       :PN
+                                     )
+                       ] ;
+           rdfs:range :PP ;
+           rdfs:label "Program Prioritas Terkait" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt##sbrdata
+<http://www.semanticweb.org/fadil/ontologies/2023/7/ldt##sbrdata> rdf:type owl:ObjectProperty ;
+                                                                  rdfs:domain :instansi_pusat ;
+                                                                  rdfs:range :datain ;
+                                                                  rdfs:label "Sumber Data" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/dijabarkan
 :dijabarkan rdf:type owl:ObjectProperty ;
             owl:inverseOf :penjabaran ;
             rdfs:domain :RPJMN ;
@@ -20,14 +87,14 @@
             rdfs:label "Dijabarkan dalam" .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data#indikator
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/indikator
 :indikator rdf:type owl:ObjectProperty ;
            rdfs:domain <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
            rdfs:range :datain ;
            rdfs:label "Indikator" .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data#indikatortkt
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/indikatortkt
 :indikatortkt rdf:type owl:ObjectProperty ;
               rdfs:domain [ rdf:type owl:Class ;
                             owl:unionOf ( :KP
@@ -40,15 +107,7 @@
               rdfs:label "Indikator Terkait" .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data#meliputimp
-:meliputimp rdf:type owl:ObjectProperty ;
-            owl:inverseOf :pntkt ;
-            rdfs:domain :PN ;
-            rdfs:range :MP ;
-            rdfs:label "Meliputi MP" .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data#mp
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/mp
 :mp rdf:type owl:ObjectProperty ;
     owl:inverseOf :mpdalam ;
     rdfs:domain :RKP ;
@@ -56,21 +115,21 @@
     rdfs:label "Major Project" .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data#mpdalam
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/mpdalam
 :mpdalam rdf:type owl:ObjectProperty ;
          rdfs:domain :MP ;
          rdfs:range :RKP ;
          rdfs:label "Major Project dalam" .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data#penjabaran
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/penjabaran
 :penjabaran rdf:type owl:ObjectProperty ;
             rdfs:domain :RKP ;
             rdfs:range :RPJMN ;
             rdfs:label "Penjabaran dari" .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data#pn
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn
 :pn rdf:type owl:ObjectProperty ;
     owl:inverseOf :pndalam ;
     rdfs:domain :RKP ;
@@ -78,21 +137,14 @@
     rdfs:label "Prioritas Nasional" .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data#pndalam
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pndalam
 :pndalam rdf:type owl:ObjectProperty ;
          rdfs:domain :PN ;
          rdfs:range :RKP ;
          rdfs:label "Prioritas Nasional dalam" .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data#pntkt
-:pntkt rdf:type owl:ObjectProperty ;
-       rdfs:domain :MP ;
-       rdfs:range :PN ;
-       rdfs:label "Prioritas Nasional Terkait" .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data#pp
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pp
 :pp rdf:type owl:ObjectProperty ;
     owl:inverseOf :ppdalam ;
     rdfs:domain :RKP ;
@@ -100,21 +152,21 @@
     rdfs:label "Program Prioritas" .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data#ppdalam
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/ppdalam
 :ppdalam rdf:type owl:ObjectProperty ;
          rdfs:domain :PP ;
          rdfs:range :RKP ;
          rdfs:label "Program Prioritas dalam" .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data#ssrnpn
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/ssrnpn
 :ssrnpn rdf:type owl:ObjectProperty ;
         rdfs:domain :PN ;
         rdfs:range :sasaranpn ;
         rdfs:label "Sasaran PN" .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data#ssrnpp
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/ssrnpp
 :ssrnpp rdf:type owl:ObjectProperty ;
         rdfs:domain :PP ;
         rdfs:range :sasaranpp ;
@@ -125,62 +177,62 @@
 #    Classes
 #################################################################
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data#KP
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/KP
 :KP rdf:type owl:Class ;
     rdfs:comment "Kegiatan Prioritas adalah kegiatan yang bersifat signifikan dan strategis untuk mencapai Program Prioritas." ;
     rdfs:label "Kegiatan Prioritas (KP)" .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data#MP
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/MP
 :MP rdf:type owl:Class ;
     rdfs:comment "Proyek Prioritas Strategis/Major Project adalah proyek yang dilaksanakan oleh Pemerintah, Pemerintah Daerah, dan/atau badan usaha yang memiliki sifat strategis untuk peningkatan pertumbuhan dan pemerataan pembangunan dalam rangka meningkatkan kesejahteraan masyarakat dan pembangunan daerah." ;
     rdfs:label "Major Project (MP)" .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data#PN
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/PN
 :PN rdf:type owl:Class ;
     rdfs:comment "Prioritas Nasional adalah program/kegiatan/proyek untuk pencapaian Sasaran Rencana Pembangunan Jangka Menengah Nasional dan kebijakan Presiden lainnya." ;
     rdfs:label "Prioritas Nasional (PN)" .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data#PP
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/PP
 :PP rdf:type owl:Class ;
     rdfs:comment "Program Prioritas adalah program yang bersifat signifikan dan strategis untuk mencapai Prioritas Nasional." ;
     rdfs:label "Program Prioritas (PP)" .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data#RKP
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/RKP
 :RKP rdf:type owl:Class ;
      rdfs:comment "Rencana Kerja Pemerintah (RKP) adalah dokumen perencanaan Nasional untuk periode 1 (satu) tahun." ;
      rdfs:label "Rencana Kerja Pemerintah (RKP)" .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data#RPJMN
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/RPJMN
 :RPJMN rdf:type owl:Class ;
        rdfs:comment "Rencana Pembangunan Jangka Menengah Nasional (RPJMN) adalah dokumen perencanaan Nasional untuk periode 5 (lima) tahun." ;
        rdfs:label "Rencana Pembangunan Jangka Menengah Nasional (RPJMN)" .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data#datain
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain
 :datain rdf:type owl:Class ;
         rdfs:comment "Data adalah catatan atas kumpulan fakta atau deskripsi berupa angka, karakter, simbol, gambar, peta, tanda, isyarat, tulisan, suara, dan/atau bunyi, yang merepresentasikan keadaan sebenarnya atau menunjukkan suatu ide, objek, kondisi, atau situasi. Informasi adalah keterangan, pernyataan, gagasan,  dan tanda-tanda yang mengandung nilai, makna, dan  pesan, baik data, fakta maupun penjelasannya yang  dapat dilihat, didengar, dan dibaca yang disajikan  dalam berbagai kemasan dan format sesuai dengan  perkembangan teknologi informasi dan komunikasi  secara elektronik ataupun nonelektronik" ;
         rdfs:label "Data dan Informasi" .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data#instansi_pusat
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/instansi_pusat
 :instansi_pusat rdf:type owl:Class ;
                 rdfs:comment "Instansi pusat adalah kementerian, lembaga pemerintah nonkementerian, kesekretariatan lembaga negara, dan kesekretariatan lembaga nonstruktural." ;
                 rdfs:label "Instansi Pusat" .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data#sasaranpn
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/sasaranpn
 :sasaranpn rdf:type owl:Class ;
            rdfs:subClassOf <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
            rdfs:comment "Sasaran untuk Prioritas Nasional" ;
            rdfs:label "Sasaran Prioritas Nasional" .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/linked_data#sasaranpp
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/sasaranpp
 :sasaranpp rdf:type owl:Class ;
            rdfs:subClassOf <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
            rdfs:comment "Sasaran untuk Program Prioritas" ;
