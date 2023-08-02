@@ -9,23 +9,20 @@
 <http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#> rdf:type owl:Ontology .
 
 #################################################################
-#    Object Properties
+#    Annotation properties
 #################################################################
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#uk
-:uk rdf:type owl:ObjectProperty ;
-    owl:inverseOf :ukdari ;
-    rdfs:domain :instansi_pusat ;
-    rdfs:range :unitkerja ;
-    rdfs:label "Unit Kerja" .
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#deskripsi
+:deskripsi rdf:type owl:AnnotationProperty .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#ukdari
-:ukdari rdf:type owl:ObjectProperty ;
-        rdfs:domain :unitkerja ;
-        rdfs:range :instansi_pusat ;
-        rdfs:label "Unit Kerja dari" .
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#nilai
+:nilai rdf:type owl:AnnotationProperty .
 
+
+#################################################################
+#    Object Properties
+#################################################################
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt##sbrdata
 <http://www.semanticweb.org/fadil/ontologies/2023/7/ldt##sbrdata> rdf:type owl:ObjectProperty ;
@@ -188,82 +185,326 @@
         rdfs:label "Sasaran PP" .
 
 
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/uk
+:uk rdf:type owl:ObjectProperty ;
+    owl:inverseOf :ukdari ;
+    rdfs:domain :instansi_pusat ;
+    rdfs:range :unitkerja ;
+    rdfs:label "Unit Kerja" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/ukdari
+:ukdari rdf:type owl:ObjectProperty ;
+        rdfs:domain :unitkerja ;
+        rdfs:range :instansi_pusat ;
+        rdfs:label "Unit Kerja dari" .
+
+
 #################################################################
 #    Classes
 #################################################################
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#unitkerja
-:unitkerja rdf:type owl:Class ;
-           rdfs:comment "Unit kerja adalah satuan (regu) kerja." ;
-           rdfs:label "Unit Kerja" .
-
-
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/KP
 :KP rdf:type owl:Class ;
-    rdfs:comment "Kegiatan Prioritas adalah kegiatan yang bersifat signifikan dan strategis untuk mencapai Program Prioritas." ;
+    :deskripsi "Kegiatan Prioritas adalah kegiatan yang bersifat signifikan dan strategis untuk mencapai Program Prioritas." ;
     rdfs:label "Kegiatan Prioritas (KP)" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/MP
 :MP rdf:type owl:Class ;
-    rdfs:comment "Proyek Prioritas Strategis/Major Project adalah proyek yang dilaksanakan oleh Pemerintah, Pemerintah Daerah, dan/atau badan usaha yang memiliki sifat strategis untuk peningkatan pertumbuhan dan pemerataan pembangunan dalam rangka meningkatkan kesejahteraan masyarakat dan pembangunan daerah." ;
+    :deskripsi "Proyek Prioritas Strategis/Major Project adalah proyek yang dilaksanakan oleh Pemerintah, Pemerintah Daerah, dan/atau badan usaha yang memiliki sifat strategis untuk peningkatan pertumbuhan dan pemerataan pembangunan dalam rangka meningkatkan kesejahteraan masyarakat dan pembangunan daerah." ;
     rdfs:label "Major Project (MP)" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/PN
 :PN rdf:type owl:Class ;
-    rdfs:comment "Prioritas Nasional adalah program/kegiatan/proyek untuk pencapaian Sasaran Rencana Pembangunan Jangka Menengah Nasional dan kebijakan Presiden lainnya." ;
+    :deskripsi "Prioritas Nasional adalah program/kegiatan/proyek untuk pencapaian Sasaran Rencana Pembangunan Jangka Menengah Nasional dan kebijakan Presiden lainnya." ;
     rdfs:label "Prioritas Nasional (PN)" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/PP
 :PP rdf:type owl:Class ;
-    rdfs:comment "Program Prioritas adalah program yang bersifat signifikan dan strategis untuk mencapai Prioritas Nasional." ;
+    :deskripsi "Program Prioritas adalah program yang bersifat signifikan dan strategis untuk mencapai Prioritas Nasional." ;
     rdfs:label "Program Prioritas (PP)" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/RKP
 :RKP rdf:type owl:Class ;
-     rdfs:comment "Rencana Kerja Pemerintah (RKP) adalah dokumen perencanaan Nasional untuk periode 1 (satu) tahun." ;
+     :deskripsi "Rencana Kerja Pemerintah (RKP) adalah dokumen perencanaan Nasional untuk periode 1 (satu) tahun." ;
      rdfs:label "Rencana Kerja Pemerintah (RKP)" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/RPJMN
 :RPJMN rdf:type owl:Class ;
-       rdfs:comment "Rencana Pembangunan Jangka Menengah Nasional (RPJMN) adalah dokumen perencanaan Nasional untuk periode 5 (lima) tahun." ;
+       :deskripsi "Rencana Pembangunan Jangka Menengah Nasional (RPJMN) adalah dokumen perencanaan Nasional untuk periode 5 (lima) tahun." ;
        rdfs:label "Rencana Pembangunan Jangka Menengah Nasional (RPJMN)" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain
 :datain rdf:type owl:Class ;
-        rdfs:comment "Data adalah catatan atas kumpulan fakta atau deskripsi berupa angka, karakter, simbol, gambar, peta, tanda, isyarat, tulisan, suara, dan/atau bunyi, yang merepresentasikan keadaan sebenarnya atau menunjukkan suatu ide, objek, kondisi, atau situasi. Informasi adalah keterangan, pernyataan, gagasan,  dan tanda-tanda yang mengandung nilai, makna, dan  pesan, baik data, fakta maupun penjelasannya yang  dapat dilihat, didengar, dan dibaca yang disajikan  dalam berbagai kemasan dan format sesuai dengan  perkembangan teknologi informasi dan komunikasi  secara elektronik ataupun nonelektronik" ;
+        :deskripsi "Data adalah catatan atas kumpulan fakta atau deskripsi berupa angka, karakter, simbol, gambar, peta, tanda, isyarat, tulisan, suara, dan/atau bunyi, yang merepresentasikan keadaan sebenarnya atau menunjukkan suatu ide, objek, kondisi, atau situasi. Informasi adalah keterangan, pernyataan, gagasan,  dan tanda-tanda yang mengandung nilai, makna, dan  pesan, baik data, fakta maupun penjelasannya yang  dapat dilihat, didengar, dan dibaca yang disajikan  dalam berbagai kemasan dan format sesuai dengan  perkembangan teknologi informasi dan komunikasi  secara elektronik ataupun nonelektronik" ;
         rdfs:label "Data dan Informasi" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/instansi_pusat
 :instansi_pusat rdf:type owl:Class ;
-                rdfs:comment "Instansi pusat adalah kementerian, lembaga pemerintah nonkementerian, kesekretariatan lembaga negara, dan kesekretariatan lembaga nonstruktural." ;
+                :deskripsi "Instansi pusat adalah kementerian, lembaga pemerintah nonkementerian, kesekretariatan lembaga negara, dan kesekretariatan lembaga nonstruktural." ;
                 rdfs:label "Instansi Pusat" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/sasaranpn
 :sasaranpn rdf:type owl:Class ;
            rdfs:subClassOf <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
-           rdfs:comment "Sasaran untuk Prioritas Nasional" ;
+           :deskripsi "Sasaran untuk Prioritas Nasional" ;
            rdfs:label "Sasaran Prioritas Nasional" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/sasaranpp
 :sasaranpp rdf:type owl:Class ;
            rdfs:subClassOf <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
-           rdfs:comment "Sasaran untuk Program Prioritas" ;
+           :deskripsi "Sasaran untuk Program Prioritas" ;
            rdfs:label "Sasaran Program Prioritas" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/unitkerja
+:unitkerja rdf:type owl:Class ;
+           :deskripsi "Unit kerja adalah satuan (regu) kerja." ;
+           rdfs:label "Unit Kerja" .
 
 
 ###  https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran
 <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> rdf:type owl:Class ;
-                                                          rdfs:comment "Sasaran adalah sesuatu yang dicapai bersamaan dengan tujuan melalui instrumen kebijakan (program) yang berisi satu atau lebih kegiatan yang dilaksanakan oleh instansi pemerintah/lembaga berdasarkan suatu pengalokasian anggaran." ;
+                                                          :deskripsi "Sasaran adalah sesuatu yang dicapai bersamaan dengan tujuan melalui instrumen kebijakan (program) yang berisi satu atau lebih kegiatan yang dilaksanakan oleh instansi pemerintah/lembaga berdasarkan suatu pengalokasian anggaran." ;
                                                           rdfs:label "Sasaran" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pn1-21
+:pn1-21 rdf:type owl:NamedIndividual ,
+                 :PN ;
+        rdfs:label "PN 1 2021 - Memperkuat Ketahanan Ekonomi untuk Pertumbuhan yang Berkualitas dan Berkeadilan" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pn1-22
+:pn1-22 rdf:type owl:NamedIndividual ,
+                 :PN ;
+        rdfs:label "PN 1 2022 - Memperkuat Ketahanan Ekonomi untuk Pertumbuhan yang Berkualitas dan Berkeadilan" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pn1-23
+:pn1-23 rdf:type owl:NamedIndividual ,
+                 :PN ;
+        :pndalam :rkp2023 ;
+        rdfs:label "PN 1 2023 - Memperkuat Ketahanan Ekonomi untuk Pertumbuhan yang Berkualitas dan Berkeadilan" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pn2-21
+:pn2-21 rdf:type owl:NamedIndividual ,
+                 :PN ;
+        rdfs:label "PN 2 2021 - Mengembangkan Wilayah untuk Mengurangi Kesenjangan dan Menjamin Pemerataan" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pn2-22
+:pn2-22 rdf:type owl:NamedIndividual ,
+                 :PN ;
+        rdfs:label "PN 2 2022 - Mengembangkan Wilayah untuk Mengurangi Kesenjangan dan Menjamin Pemerataan" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pn2-23
+:pn2-23 rdf:type owl:NamedIndividual ,
+                 :PN ;
+        rdfs:label "PN 2 2023 - Mengembangkan Wilayah untuk Mengurangi Kesenjangan dan Menjamin Pemerataan" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pn3-21
+:pn3-21 rdf:type owl:NamedIndividual ,
+                 :PN ;
+        rdfs:label "PN 3 2021 - Meningkatkan Sumber Daya Manusia Berkualitas dan Berdaya Saing" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pn3-22
+:pn3-22 rdf:type owl:NamedIndividual ,
+                 :PN ;
+        rdfs:label "PN 3 2022 - Meningkatkan Sumber Daya Manusia Berkualitas dan Berdaya Saing" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pn3-23
+:pn3-23 rdf:type owl:NamedIndividual ,
+                 :PN ;
+        rdfs:label "PN 3 2023 - Meningkatkan Sumber Daya Manusia Berkualitas dan Berdaya Saing" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pn4-21
+:pn4-21 rdf:type owl:NamedIndividual ,
+                 :PN ;
+        rdfs:label "PN 4 2021 -  Revolusi Mental dan Pembangunan Kebudayaan" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pn4-22
+:pn4-22 rdf:type owl:NamedIndividual ,
+                 :PN ;
+        rdfs:label "PN 4 2022 -  Revolusi Mental dan Pembangunan Kebudayaan" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pn4-23
+:pn4-23 rdf:type owl:NamedIndividual ,
+                 :PN ;
+        rdfs:label "PN 4 2023 -  Revolusi Mental dan Pembangunan Kebudayaan" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pn5-21
+:pn5-21 rdf:type owl:NamedIndividual ,
+                 :PN ;
+        rdfs:label "PN 5 2021 - Memperkuat Infrastruktur untuk Mendukung Pengembangan Ekonomi dan Pelayanan Dasar" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pn5-22
+:pn5-22 rdf:type owl:NamedIndividual ,
+                 :PN ;
+        rdfs:label "PN 5 2022 - Memperkuat Infrastruktur untuk Mendukung Pengembangan Ekonomi dan Pelayanan Dasar" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pn5-23
+:pn5-23 rdf:type owl:NamedIndividual ,
+                 :PN ;
+        rdfs:label "PN 5 2023 - Memperkuat Infrastruktur untuk Mendukung Pengembangan Ekonomi dan Pelayanan Dasar" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pn6-21
+:pn6-21 rdf:type owl:NamedIndividual ,
+                 :PN ;
+        rdfs:label "PN 6 2021 - Membangun Lingkungan Hidup, Meningkatkan Ketahanan Bencana, dan Perubahan Iklim" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pn6-22
+:pn6-22 rdf:type owl:NamedIndividual ,
+                 :PN ;
+        rdfs:label "PN 6 2022 - Membangun Lingkungan Hidup, Meningkatkan Ketahanan Bencana, dan Perubahan Iklim" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pn6-23
+:pn6-23 rdf:type owl:NamedIndividual ,
+                 :PN ;
+        rdfs:label "PN 6 2023 - Membangun Lingkungan Hidup, Meningkatkan Ketahanan Bencana, dan Perubahan Iklim" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pn7-21
+:pn7-21 rdf:type owl:NamedIndividual ,
+                 :PN ;
+        rdfs:label "PN 7 2021 - Memperkuat Stabilitas Polhukhankam dan Transformasi Pelayanan Publik" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pn7-22
+:pn7-22 rdf:type owl:NamedIndividual ,
+                 :PN ;
+        rdfs:label "PN 7 2022 - Memperkuat Stabilitas Polhukhankam dan Transformasi Pelayanan Publik" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pn7-23
+:pn7-23 rdf:type owl:NamedIndividual ,
+                 :PN ;
+        rdfs:label "PN 7 2023 - Memperkuat Stabilitas Polhukhankam dan Transformasi Pelayanan Publik" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#rkp2021
+:rkp2021 rdf:type owl:NamedIndividual ,
+                  :RKP ;
+         :penjabaran :rpjmn20-24 ;
+         rdfs:label "Rencana Kerja Pemerintah Tahun 2021" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#rkp2022
+:rkp2022 rdf:type owl:NamedIndividual ,
+                  :RKP ;
+         :penjabaran :rpjmn20-24 ;
+         rdfs:label "Rencana Kerja Pemerintah Tahun 2022" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#rkp2023
+:rkp2023 rdf:type owl:NamedIndividual ,
+                  :RKP ;
+         :penjabaran :rpjmn20-24 ;
+         rdfs:label "Rencana Kerja Pemerintah Tahun 2023" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#rpjmn20-24
+:rpjmn20-24 rdf:type owl:NamedIndividual ,
+                     :RPJMN ;
+            :dijabarkan :rkp2021 ,
+                        :rkp2022 ,
+                        :rkp2023 ;
+            rdfs:label "Rencana Pembangunan Jangka Menengah Nasional Tahun 2020-2024" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#spn00000001
+:spn00000001 rdf:type owl:NamedIndividual ,
+                      :sasaranpn ;
+             :ssrnpn :pn1-23 ;
+             rdfs:label """Meningkatnya daya dukung dan kualitas sumber daya ekonomi sebagai modalitas bagi 
+pembangunan ekonomi yang berkelanjutan""" .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :pn1-21
+                        :pn1-22
+                        :pn1-23
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :pn2-21
+                        :pn2-22
+                        :pn2-23
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :pn3-21
+                        :pn3-22
+                        :pn3-23
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :pn4-21
+                        :pn4-22
+                        :pn4-23
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :pn5-21
+                        :pn5-22
+                        :pn5-23
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :pn6-21
+                        :pn6-22
+                        :pn6-23
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :pn7-21
+                        :pn7-22
+                        :pn7-23
+                      )
+] .
 
 
 ###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
