@@ -57,14 +57,7 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/indikatortkt
 :indikatortkt rdf:type owl:ObjectProperty ;
               rdfs:domain :datain ;
-              rdfs:range [ rdf:type owl:Class ;
-                           owl:unionOf ( :KP
-                                         :MP
-                                         :PN
-                                         :PP
-                                         <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran>
-                                       )
-                         ] ;
+              rdfs:range <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
               rdfs:label "Indikator Terkait" .
 
 
@@ -274,7 +267,39 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000003
 :datain_000003 rdf:type owl:NamedIndividual ,
                         :datain ;
+               :target "2022 : 92,40" ,
+                       "2023 :  94,00" ;
                rdfs:label "Skor Pola Pangan Harapan (PPH)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000004
+:datain_000004 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :indikator :datain_000004 ;
+               :target "2022 : 11" ,
+                       "2023 : 11" ;
+               rdfs:label "Pengelolaan dan pemanfaatan Wilayah Pengelolaan Perikanan (WPP) secara berkelanjutan (WPP)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000005
+:datain_000005 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 3,18" ,
+                       "2023 : 3,21" ;
+               rdfs:label "Rasio kewirausahaan nasional"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000006
+:datain_000006 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               rdfs:label "Pertumbuhan PDB pertanian"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#spn_68f97b4f_d887_46f9_949b_65b0febc313f
+:spn_68f97b4f_d887_46f9_949b_65b0febc313f rdf:type owl:NamedIndividual ,
+                                                   :sasaranpn ;
+                                          :ssrnpn :pn1-23 ;
+                                          rdfs:label "Meningkatnya nilai tambah, lapangan kerja, investasi, ekspor, dan daya saing  perekonomian"@en .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000001
@@ -460,7 +485,8 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/spn00000001
 :spn00000001 rdf:type owl:NamedIndividual ,
                       :sasaranpn ;
-             :indikator :datain_000001 ;
+             :indikator :datain_000003 ,
+                        :datain_000001 ;
              :ssrnpn :pn1-23 ;
              rdfs:label """Meningkatnya daya dukung dan kualitas sumber daya ekonomi sebagai modalitas bagi 
 pembangunan ekonomi yang berkelanjutan""" .
