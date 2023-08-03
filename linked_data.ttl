@@ -12,14 +12,14 @@
 #    Annotation properties
 #################################################################
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#gambar
-:gambar rdf:type owl:AnnotationProperty ;
-        rdfs:label "Gambar" .
-
-
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/deskripsi
 :deskripsi rdf:type owl:AnnotationProperty ;
            rdfs:label "Deskripsi" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/gambar
+:gambar rdf:type owl:AnnotationProperty ;
+        rdfs:label "Gambar" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/nilai
@@ -48,6 +48,7 @@
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/indikator
 :indikator rdf:type owl:ObjectProperty ;
+           owl:inverseOf :indikatortkt ;
            rdfs:domain <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
            rdfs:range :datain ;
            rdfs:label "Indikator" .
@@ -55,14 +56,15 @@
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/indikatortkt
 :indikatortkt rdf:type owl:ObjectProperty ;
-              rdfs:domain [ rdf:type owl:Class ;
-                            owl:unionOf ( :KP
-                                          :MP
-                                          :PN
-                                          :PP
-                                        )
-                          ] ;
-              rdfs:range :datain ;
+              rdfs:domain :datain ;
+              rdfs:range [ rdf:type owl:Class ;
+                           owl:unionOf ( :KP
+                                         :MP
+                                         :PN
+                                         :PP
+                                         <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran>
+                                       )
+                         ] ;
               rdfs:label "Indikator Terkait" .
 
 
@@ -193,6 +195,18 @@
 
 
 #################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#target
+:target rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdfs:domain owl:Thing ;
+        rdfs:range xsd:string ;
+        rdfs:label "Target" .
+
+
+#################################################################
 #    Classes
 #################################################################
 
@@ -256,6 +270,20 @@
 #################################################################
 #    Individuals
 #################################################################
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000003
+:datain_000003 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               rdfs:label "Skor Pola Pangan Harapan (PPH)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000001
+:datain_000001 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 15,70" ,
+                       "2023 : 17.9" ;
+               rdfs:label "Porsi EBT dalam bauran energi nasional (%)" .
+
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn1-21
 :pn1-21 rdf:type owl:NamedIndividual ,
@@ -388,8 +416,8 @@
 :rkp2021 rdf:type owl:NamedIndividual ,
                   :RKP ;
          :penjabaran :rpjmn20-24 ;
-         :gambar "https://perpustakaan.bappenas.go.id/e-library/file_upload/koleksi/migrasi-data-publikasi/gambar/rkp/rkp_2021.jpg" ;
          :deskripsi "Rencana Kerja Pemerintah Tahun 2021 merupakan dokumen perencanaan pembangunan tahunan yang disusun sebagai penjabaran dari Rencana Pembangunan Jangka Menengah Nasional (RPJMN) Tahun 2020-2024 dengan mengusung tema: Mempercepat Pemulihan Ekonomi dan Reformasi Sosial" ;
+         :gambar "https://perpustakaan.bappenas.go.id/e-library/file_upload/koleksi/migrasi-data-publikasi/gambar/rkp/rkp_2021.jpg" ;
          rdfs:label "Rencana Kerja Pemerintah Tahun 2021" .
 
 
@@ -397,8 +425,8 @@
 :rkp2022 rdf:type owl:NamedIndividual ,
                   :RKP ;
          :penjabaran :rpjmn20-24 ;
-         :gambar "https://perpustakaan.bappenas.go.id/e-library/file_upload/koleksi/migrasi-data-publikasi/gambar/rkp/Cover%20Narasi%20Pemutakhiran%20RKP%202022.jpg" ;
          :deskripsi "Rencana Kerja Pemerintah Tahun 2022 merupakan dokumen perencanaan pembangunan tahunan yang disusun sebagai penjabaran dari Rencana Pembangunan Jangka Menengah Nasional (RPJMN) Tahun 2020-2024 dengan mengusung tema: Pemulihan Ekonomi dan Reformasi Struktural" ;
+         :gambar "https://perpustakaan.bappenas.go.id/e-library/file_upload/koleksi/migrasi-data-publikasi/gambar/rkp/Cover%20Narasi%20Pemutakhiran%20RKP%202022.jpg" ;
          rdfs:label "Rencana Kerja Pemerintah Tahun 2022" .
 
 
@@ -407,7 +435,14 @@
                   :RKP ;
          :penjabaran :rpjmn20-24 ;
          :pn :pn1-23 ,
-             :pn2-23 ;
+             :pn2-23 ,
+             :pn3-23 ,
+             :pn4-23 ,
+             :pn5-23 ,
+             :pn6-23 ,
+             :pn7-23 ;
+         :deskripsi "Rencana Kerja Pemerintah Tahun 2023 merupakan dokumen perencanaan pembangunan tahunan yang disusun sebagai penjabaran dari Rencana Pembangunan Jangka Menengah Nasional (RPJMN) Tahun 2020-2024 dengan mengusung tema: Peningkatan Produktivitas untuk Transformasi Ekonomi yang Inklusif dan Berkelanjutan" ;
+         :gambar "https://perpustakaan.bappenas.go.id/e-library/file_upload/koleksi/migrasi-data-publikasi/file/Unit_Kerja/Dit%20Evaluasi%2C%20dan%20Pengendalian%20Penyusunan%20Perencanaan%20Pembangunan/Konsolidasi%20RKP%202023.jpg" ;
          rdfs:label "Rencana Kerja Pemerintah Tahun 2023" .
 
 
@@ -417,14 +452,15 @@
             :dijabarkan :rkp2021 ,
                         :rkp2022 ,
                         :rkp2023 ;
-            :gambar "https://perpustakaan.bappenas.go.id/e-library/file_upload/koleksi/migrasi-data-publikasi/gambar/rpjmn/RPJMN-2020-2024.jpg" ;
             :deskripsi "Rencana Pembangunan Jangka Menengah Nasional (RPJMN) Tahun 2020-2024 merupakan sebuah dokumen perencanaan pembangunan 5 (lima) tahunan yang disusun sebagai landasan dan pedoman pelaksanaan perencanaan pembangunan selama periode 2020-2024." ;
+            :gambar "https://perpustakaan.bappenas.go.id/e-library/file_upload/koleksi/migrasi-data-publikasi/gambar/rpjmn/RPJMN-2020-2024.jpg" ;
             rdfs:label "Rencana Pembangunan Jangka Menengah Nasional Tahun 2020-2024" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/spn00000001
 :spn00000001 rdf:type owl:NamedIndividual ,
                       :sasaranpn ;
+             :indikator :datain_000001 ;
              :ssrnpn :pn1-23 ;
              rdfs:label """Meningkatnya daya dukung dan kualitas sumber daya ekonomi sebagai modalitas bagi 
 pembangunan ekonomi yang berkelanjutan""" .
