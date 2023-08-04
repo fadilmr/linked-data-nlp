@@ -31,6 +31,21 @@
 #    Object Properties
 #################################################################
 
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#uk
+:uk rdf:type owl:ObjectProperty ;
+    owl:inverseOf :ukdari ;
+    rdfs:domain :instansi_pusat ;
+    rdfs:range :unitkerja ;
+    rdfs:label "Unit Kerja" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#ukdari
+:ukdari rdf:type owl:ObjectProperty ;
+        rdfs:domain :unitkerja ;
+        rdfs:range :instansi_pusat ;
+        rdfs:label "Unit Kerja dari" .
+
+
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt##sbrdata
 <http://www.semanticweb.org/fadil/ontologies/2023/7/ldt##sbrdata> rdf:type owl:ObjectProperty ;
                                                                   rdfs:domain :datain ;
@@ -175,15 +190,15 @@
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/ssrnpn
 :ssrnpn rdf:type owl:ObjectProperty ;
-        rdfs:domain :PN ;
-        rdfs:range :sasaranpn ;
+        rdfs:domain :sasaranpn ;
+        rdfs:range :PN ;
         rdfs:label "Sasaran PN" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/ssrnpp
 :ssrnpp rdf:type owl:ObjectProperty ;
-        rdfs:domain :PP ;
-        rdfs:range :sasaranpp ;
+        rdfs:domain :sasaranpp ;
+        rdfs:range :PP ;
         rdfs:label "Sasaran PP" .
 
 
@@ -191,7 +206,14 @@
 #    Data properties
 #################################################################
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#target
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#tahun
+:tahun rdf:type owl:DatatypeProperty ;
+       rdfs:domain owl:Thing ;
+       rdfs:range xsd:decimal ;
+       rdfs:label "Tahun" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/target
 :target rdf:type owl:DatatypeProperty ;
         rdfs:subPropertyOf owl:topDataProperty ;
         rdfs:domain owl:Thing ;
@@ -202,6 +224,11 @@
 #################################################################
 #    Classes
 #################################################################
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#unitkerja
+:unitkerja rdf:type owl:Class ;
+           rdfs:label "Unit Kerja" .
+
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/KP
 :KP rdf:type owl:Class ;
@@ -264,7 +291,15 @@
 #    Individuals
 #################################################################
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000003
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000001
+:datain_000001 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 15,70" ,
+                       "2023 : 17.9" ;
+               rdfs:label "Porsi EBT dalam bauran energi nasional (%)" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000003
 :datain_000003 rdf:type owl:NamedIndividual ,
                         :datain ;
                :target "2022 : 92,40" ,
@@ -272,16 +307,15 @@
                rdfs:label "Skor Pola Pangan Harapan (PPH)"@en .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000004
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000004
 :datain_000004 rdf:type owl:NamedIndividual ,
                         :datain ;
-               :indikator :datain_000004 ;
                :target "2022 : 11" ,
                        "2023 : 11" ;
                rdfs:label "Pengelolaan dan pemanfaatan Wilayah Pengelolaan Perikanan (WPP) secara berkelanjutan (WPP)"@en .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000005
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000005
 :datain_000005 rdf:type owl:NamedIndividual ,
                         :datain ;
                :target "2022 : 3,18" ,
@@ -289,25 +323,10 @@
                rdfs:label "Rasio kewirausahaan nasional"@en .
 
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000006
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000006
 :datain_000006 rdf:type owl:NamedIndividual ,
                         :datain ;
                rdfs:label "Pertumbuhan PDB pertanian"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#spn_68f97b4f_d887_46f9_949b_65b0febc313f
-:spn_68f97b4f_d887_46f9_949b_65b0febc313f rdf:type owl:NamedIndividual ,
-                                                   :sasaranpn ;
-                                          :ssrnpn :pn1-23 ;
-                                          rdfs:label "Meningkatnya nilai tambah, lapangan kerja, investasi, ekspor, dan daya saing  perekonomian"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000001
-:datain_000001 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 15,70" ,
-                       "2023 : 17.9" ;
-               rdfs:label "Porsi EBT dalam bauran energi nasional (%)" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn1-21
@@ -485,11 +504,19 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/spn00000001
 :spn00000001 rdf:type owl:NamedIndividual ,
                       :sasaranpn ;
-             :indikator :datain_000003 ,
-                        :datain_000001 ;
+             :indikator :datain_000001 ,
+                        :datain_000003 ,
+                        :datain_000004 ;
              :ssrnpn :pn1-23 ;
              rdfs:label """Meningkatnya daya dukung dan kualitas sumber daya ekonomi sebagai modalitas bagi 
 pembangunan ekonomi yang berkelanjutan""" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/spn_68f97b4f_d887_46f9_949b_65b0febc313f
+:spn_68f97b4f_d887_46f9_949b_65b0febc313f rdf:type owl:NamedIndividual ,
+                                                   :sasaranpn ;
+                                          :ssrnpn :pn1-23 ;
+                                          rdfs:label "Meningkatnya nilai tambah, lapangan kerja, investasi, ekspor, dan daya saing  perekonomian"@en .
 
 
 #################################################################
