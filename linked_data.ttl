@@ -370,6 +370,134 @@
                rdfs:label "Pertumbuhan ekspor industri pengolahan (%)"@en .
 
 
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pp_000001
+:pp_000001 rdf:type owl:NamedIndividual ,
+                    :PP ;
+           :ppdalam :rkp2023 ;
+           :ppterkait :pn1-23 ;
+           :deskripsi "Pemenuhan Kebutuhan Energi dengan Mengutamakan Peningkatan Energi Baru Terbarukan (EBT)"@en ;
+           rdfs:label "PP 1 - PN 1 2023" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pp_000002
+:pp_000002 rdf:type owl:NamedIndividual ,
+                    :PP ;
+           :ppdalam :rkp2023 ;
+           :ppterkait :pn1-23 ;
+           :deskripsi "Peningkatan kuantitas/ketahanan air untuk mendukung pertumbuhan ekonomi"@en ;
+           rdfs:label "PP 2 - PN 1 2023" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pp_000003
+:pp_000003 rdf:type owl:NamedIndividual ,
+                    :PP ;
+           :ppdalam :rkp2023 ;
+           :ppterkait :pn1-23 ;
+           :deskripsi "Peningkatan ketersediaan, akses, dan kualitas konsumsi pangan"@en ;
+           rdfs:label "PP 3 - PN 1 2023" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pp_000004
+:pp_000004 rdf:type owl:NamedIndividual ,
+                    :PP ;
+           :ppdalam :rkp2023 ;
+           :ppterkait :pn1-23 ;
+           :deskripsi "Peningkatan pengelolaan kemaritiman, perikanan, dan kelautan"@en ;
+           rdfs:label "PP 4 - PN 1 2023" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pp_000005
+:pp_000005 rdf:type owl:NamedIndividual ,
+                    :PP ;
+           :ppdalam :rkp2023 ;
+           :ppterkait :pn1-23 ;
+           :deskripsi "Penguatan kewirausahaan, Usaha Mikro, Kecil Menengah (UMKM) dan koperasi"@en ;
+           rdfs:label "PP 5 - PN 1 2023" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pp_000006
+:pp_000006 rdf:type owl:NamedIndividual ,
+                    :PP ;
+           :ppdalam :rkp2023 ;
+           :ppterkait :pn1-23 ;
+           :deskripsi "Peningkatan nilai tambah, lapangan kerja, dan investasi di sektor riil, dan industrialisasi"@en ;
+           rdfs:label "PP 6 - PN 1 2023" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pp_000007
+:pp_000007 rdf:type owl:NamedIndividual ,
+                    :PP ;
+           :ppdalam :rkp2023 ;
+           :ppterkait :pn1-23 ;
+           :deskripsi "Peningkatan ekspor bernilai tambah tinggi dan penguatan Tingkat Kandungan Dalam Negeri (TKDN)"@en ;
+           rdfs:label "PP 7 - PN 1 2023" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#pp_000008
+:pp_000008 rdf:type owl:NamedIndividual ,
+                    :PP ;
+           :ppdalam :rkp2023 ;
+           :ppterkait :pn1-23 ;
+           :deskripsi "Penguatan pilar pertumbuhan dan daya saing ekonomi"@en ;
+           rdfs:label "PP 8 - PN 1 2023" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#spp_000001
+:spp_000001 rdf:type owl:NamedIndividual ,
+                     :sasaranpp ;
+            :ssrnpp :pp_000001 ;
+            rdfs:label "Meningkatnya pemenuhan kebutuhan energi dengan mengutamakan peningkatan Energi Baru Terbarukan (EBT)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#spp_000002
+:spp_000002 rdf:type owl:NamedIndividual ,
+                     :sasaranpp ;
+            :ssrnpp :pp_000002 ;
+            rdfs:label "Meningkatnya kuantitas/ketahanan air untuk mendukung pertumbuhan ekonomi"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#spp_000003
+:spp_000003 rdf:type owl:NamedIndividual ,
+                     :sasaranpp ;
+            :ssrnpp :pp_000003 ;
+            rdfs:label "Meningkatnya ketersediaan, akses, dan kualitas konsumsi pangan"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#spp_000004
+:spp_000004 rdf:type owl:NamedIndividual ,
+                     :sasaranpp ;
+            :ssrnpp :pp_000004 ;
+            rdfs:label "Meningkatnya pengelolaan kemaritiman, perikanan, dan kelautan"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#spp_000005
+:spp_000005 rdf:type owl:NamedIndividual ,
+                     :sasaranpp ;
+            :ssrnpp :pp_000005 ;
+            rdfs:label "Menguatnya kewirausahaan, Usaha Mikro, Kecil Menengah (UMKM) dan koperasi"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#spp_000006
+:spp_000006 rdf:type owl:NamedIndividual ,
+                     :sasaranpp ;
+            :ssrnpp :pp_000006 ;
+            rdfs:label "Meningkatnya nilai tambah, lapangan kerja, dan investasi di sektor riil, dan industrialisasi"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#spp_000007
+:spp_000007 rdf:type owl:NamedIndividual ,
+                     :sasaranpp ;
+            :ssrnpp :pp_000007 ;
+            rdfs:label "Meningkatnya ekspor bernilai tambah tinggi dan penguatan Tingkat Kandungan Dalam Negeri (TKDN)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#spp_000008
+:spp_000008 rdf:type owl:NamedIndividual ,
+                     :sasaranpp ;
+            :ssrnpp :pp_000008 ;
+            rdfs:label "Menguatnya pilar pertumbuhan dan daya saing ekonomi"@en .
+
+
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000001
 :datain_000001 rdf:type owl:NamedIndividual ,
                         :datain ;
