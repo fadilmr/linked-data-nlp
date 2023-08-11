@@ -35,7 +35,7 @@
 <http://www.semanticweb.org/fadil/ontologies/2023/7/ldt##sbrdata> rdf:type owl:ObjectProperty ;
                                                                   rdfs:domain :datain ;
                                                                   rdfs:range :instansi_pusat ;
-                                                                  rdfs:label "Sumber Data" .
+                                                                  rdfs:comment "SumberData" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/dijabarkan
@@ -43,7 +43,7 @@
             owl:inverseOf :penjabaran ;
             rdfs:domain :RPJMN ;
             rdfs:range :RKP ;
-            rdfs:label "Dijabarkan dalam" .
+            rdfs:comment "Dijabarkandalam" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/indikator
@@ -51,14 +51,14 @@
            owl:inverseOf :indikatortkt ;
            rdfs:domain <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
            rdfs:range :datain ;
-           rdfs:label "Indikator" .
+           rdfs:comment "Indikator" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/indikatortkt
 :indikatortkt rdf:type owl:ObjectProperty ;
               rdfs:domain :datain ;
               rdfs:range <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
-              rdfs:label "Indikator Terkait" .
+              rdfs:comment "IndikatorTerkait" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/kpdalam
@@ -70,7 +70,7 @@
                                     :PP
                                   )
                     ] ;
-         rdfs:label "Kegiatan Prioritas dalam" .
+         rdfs:comment "KegiatanPrioritasdalam" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/kpterkait
@@ -81,7 +81,7 @@
                                      )
                        ] ;
            rdfs:range :KP ;
-           rdfs:label "Meliputi Kegiatan Prioritas" .
+           rdfs:comment "MeliputiKegiatanPrioritas" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/mp
@@ -89,21 +89,21 @@
     owl:inverseOf :mpdalam ;
     rdfs:domain :RPJMN ;
     rdfs:range :MP ;
-    rdfs:label "Major Project" .
+    rdfs:comment "MajorProject" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/mpdalam
 :mpdalam rdf:type owl:ObjectProperty ;
          rdfs:domain :MP ;
          rdfs:range :RKP ;
-         rdfs:label "Major Project dalam" .
+         rdfs:comment "MajorProjectdalam" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/penjabaran
 :penjabaran rdf:type owl:ObjectProperty ;
             rdfs:domain :RKP ;
             rdfs:range :RPJMN ;
-            rdfs:label "Penjabaran dari" .
+            rdfs:comment "Penjabarandari" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn
@@ -111,21 +111,21 @@
     owl:inverseOf :pndalam ;
     rdfs:domain :RKP ;
     rdfs:range :PN ;
-    rdfs:label "Mempunyai Prioritas Nasional" .
+    rdfs:comment "MempunyaiPrioritasNasional" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pndalam
 :pndalam rdf:type owl:ObjectProperty ;
          rdfs:domain :PN ;
          rdfs:range :RKP ;
-         rdfs:label "Prioritas Nasional dalam" .
+         rdfs:comment "PrioritasNasionaldalam" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pnmeliputimp
 :pnmeliputimp rdf:type owl:ObjectProperty ;
               rdfs:domain :PN ;
               rdfs:range :MP ;
-              rdfs:label "Meliputi MP" .
+              rdfs:comment "MeliputiMP" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/ppdalam
@@ -133,14 +133,14 @@
          owl:inverseOf :ppterkait ;
          rdfs:domain :PP ;
          rdfs:range :PN ;
-         rdfs:label "Program Prioritas dalam" .
+         rdfs:comment "ProgramPrioritasdalam" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/ppterkait
 :ppterkait rdf:type owl:ObjectProperty ;
            rdfs:domain :PN ;
            rdfs:range :PP ;
-           rdfs:label "Meliputi Program Prioritas" .
+           rdfs:comment "MeliputiProgramPrioritas" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/punyasasaran
@@ -148,7 +148,7 @@
               owl:inverseOf :ssrnpp ;
               rdfs:domain :PP ;
               rdfs:range :sasaranpp ;
-              rdfs:label "Mempunyai sasaran PP" .
+              rdfs:comment "MempunyaisasaranPP" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/punyasasaranpn
@@ -156,21 +156,21 @@
                 owl:inverseOf :ssrnpn ;
                 rdfs:domain :PN ;
                 rdfs:range :sasaranpn ;
-                rdfs:label "Mempunyai sasaran PN" .
+                rdfs:comment "MempunyaisasaranPN" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/ssrnpn
 :ssrnpn rdf:type owl:ObjectProperty ;
         rdfs:domain :sasaranpn ;
         rdfs:range :PN ;
-        rdfs:label "Sasaran PN" .
+        rdfs:comment "SasaranPN" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/ssrnpp
 :ssrnpp rdf:type owl:ObjectProperty ;
         rdfs:domain :sasaranpp ;
         rdfs:range :PP ;
-        rdfs:label "Sasaran PP" .
+        rdfs:comment "SasaranPP" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/uk
@@ -178,14 +178,14 @@
     owl:inverseOf :ukdari ;
     rdfs:domain :instansi_pusat ;
     rdfs:range :unitkerja ;
-    rdfs:label "Unit Kerja" .
+    rdfs:comment "UnitKerja" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/ukdari
 :ukdari rdf:type owl:ObjectProperty ;
         rdfs:domain :unitkerja ;
         rdfs:range :instansi_pusat ;
-        rdfs:label "Unit Kerja dari" .
+        rdfs:comment "UnitKerjadari" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/var
@@ -193,14 +193,14 @@
      owl:inverseOf :vardari ;
      rdfs:domain :datain ;
      rdfs:range :datain ;
-     rdfs:label "Variabel" .
+     rdfs:comment "Variabel" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/vardari
 :vardari rdf:type owl:ObjectProperty ;
          rdfs:domain :datain ;
          rdfs:range :datain ;
-         rdfs:label "Variabel dari" .
+         rdfs:comment "Variabeldari" .
 
 
 #################################################################
@@ -228,59 +228,68 @@
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/KP
 :KP rdf:type owl:Class ;
-    rdfs:label "Kegiatan Prioritas (KP)" .
+    rdfs:comment "Kegiatan Prioritas (KP)" ;
+    rdfs:label "KP" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/MP
 :MP rdf:type owl:Class ;
-    rdfs:label "Major Project (MP)" .
+    rdfs:comment "Major Project (MP)" ;
+    rdfs:label "MP" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/PN
 :PN rdf:type owl:Class ;
-    rdfs:label "Prioritas Nasional (PN)" .
+    rdfs:comment "Prioritas Nasional (PN)" ;
+    rdfs:label "PN" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/PP
 :PP rdf:type owl:Class ;
-    rdfs:label "Program Prioritas (PP)" .
+    rdfs:comment "Program Prioritas (PP)" ;
+    rdfs:label "PP" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/RKP
 :RKP rdf:type owl:Class ;
-     rdfs:label "Rencana Kerja Pemerintah (RKP)" .
+     rdfs:comment "Rencana Kerja Pemerintah (RKP)" ;
+     rdfs:label "RKP" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/RPJMN
 :RPJMN rdf:type owl:Class ;
-       rdfs:label "Rencana Pembangunan Jangka Menengah Nasional (RPJMN)" .
+       rdfs:comment "Rencana Pembangunan Jangka Menengah Nasional (RPJMN)" ;
+       rdfs:label "RPJMN" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain
 :datain rdf:type owl:Class ;
-        rdfs:label "Data dan Informasi" .
+        rdfs:comment "Data dan Informasi" ;
+        rdfs:label "datain" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/instansi_pusat
 :instansi_pusat rdf:type owl:Class ;
-                rdfs:label "Instansi Pusat" .
+                rdfs:comment "Instansi Pusat" ;
+                rdfs:label "IP" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/sasaranpn
 :sasaranpn rdf:type owl:Class ;
            rdfs:subClassOf <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
-           rdfs:label "Sasaran Prioritas Nasional" .
+           rdfs:label "SasaranPN" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/sasaranpp
 :sasaranpp rdf:type owl:Class ;
            rdfs:subClassOf <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
-           rdfs:label "Sasaran Program Prioritas" .
+           rdfs:label "SasaranPP" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/unitkerja
 :unitkerja rdf:type owl:Class ;
-           rdfs:label "Unit Kerja" .
+           rdfs:comment "Unit Kerja" ;
+           rdfs:label "UK" .
 
 
 ###  https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran
@@ -291,356 +300,6 @@
 #################################################################
 #    Individuals
 #################################################################
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000020
-:datain_000020 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 :  103.00 - 105.00" ,
-                       "2023 :  105.00 - 107.00" ;
-               rdfs:label "Nilai Tukar Petani (NTP)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000021
-:datain_000021 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 :  2100" ,
-                       "2023 :  2100" ;
-               rdfs:label "Angka Kecukupan Energi (AKE) (kkal/kapita/hari)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000022
-:datain_000022 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 :  57.00" ,
-                       "2023 :  57.00" ;
-               rdfs:label "Angka Kecukupan Protein (AKP) (gram/kapita/hari)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000023
-:datain_000023 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2023 : 5.20" ,
-                       "2023 : 5.50" ;
-               rdfs:label "Prevalence of Undernourishment (PoU) (%)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000024
-:datain_000024 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 4.50" ,
-                       "2023 : 4.20" ;
-               rdfs:label "Food Insecurity Experience Scale (FIES) (%)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000025
-:datain_000025 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 25.10" ,
-                       "2023 : 29.10" ;
-               rdfs:label "Konservasi kawasan kelautan (juta ha)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000026
-:datain_000026 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : <= 72" ,
-                       "2023 : <= 76" ;
-               rdfs:label "Proporsi tangkan jenis ikan yang berbeda dalam batasan biologis yang aman (%)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000027
-:datain_000027 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 29.42" ,
-                       "2023 : 30.58" ;
-               rdfs:label "Produksi perikanan (juta ton)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000028
-:datain_000028 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 2.60" ,
-                       "2023 : 2.00" ;
-               rdfs:label "Produksi garam (juta ton)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000029
-:datain_000029 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 104.00 - 106.00" ,
-                       "2023 : 107.00 - 108.00" ;
-               rdfs:label "Nilai Tukar Nelayan"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000030
-:datain_000030 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 20.88" ,
-                       "2023 : 21.44" ;
-               rdfs:label "Rasio kredit UMKM terhadap totak kredit perbankan (%)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000031
-:datain_000031 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 2.54" ,
-                       "2023 : 2.74" ;
-               rdfs:label "Pertumbuhan wirausaha (%)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000032
-:datain_000032 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 5.20" ,
-                       "2023 : 5.40" ;
-               rdfs:label "Kontribusi koperasi terhadap PDB (%)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000033
-:datain_000033 rdf:type owl:NamedIndividual ,
-                        :sasaranpp ;
-               :target "2022 : 5.30 - 5.70" ,
-                       "2023 : 5.50 - 5.90" ;
-               rdfs:label "Pertumbuhan PDB industri pengolahan nonmigas (%)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000035
-:datain_000035 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 18.00 - 18.10" ,
-                       "2023 : 18.80" ;
-               rdfs:label "Kontribusi PDB industri pengolahan nonmigas (%)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000036
-:datain_000036 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 1236.0" ,
-                       "2023 : 1279.0" ;
-               rdfs:label "Nilai tambah ekonomi kreatif (triliun rupiah)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000037
-:datain_000037 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 20.90" ,
-                       "2023 : 21.70" ;
-               rdfs:label "Jumlah tenaga kerja  industri pengolahan  (juta orang"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000038
-:datain_000038 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 15.00" ,
-                       "2023 : 15.5" ;
-               rdfs:label "Kontribusi tenaga kerja  di sektor industri  terhadap total pekerja (%)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000039
-:datain_000039 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 21.64" ,
-                       "2023 : 21.93" ;
-               rdfs:label "Jumlah tenaga kerja  pariwisata (juta orang)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000040
-:datain_000040 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 22.29" ,
-                       "2023 : 22.59" ;
-               rdfs:label "Jumlah tenaga kerja  ekonomi kreatif (juta orang)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000041
-:datain_000041 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 968.4" ,
-                       "2023 : 1200 - 1300" ;
-               rdfs:label "Nilai realisasi PMA dan PMDN (triliun rupiah)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000042
-:datain_000042 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 352.5" ,
-                       "2023 : 396 - 420" ;
-               rdfs:label "Nilai realisasi PMA dan PMDN industri  pengolahan (triliun rupiah)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000043
-:datain_000043 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 3.60 - 3.80" ,
-                       "2023 : 3.60 - 3.80" ;
-               rdfs:label "Pertumbuhan PDB pertanian, peternakan, perburuan dan jasa pertanian (%)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000044
-:datain_000044 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 31.4 - 31.7" ,
-                       "2023: 40.4 - 44.9" ;
-               rdfs:label "Neraca perdagangan barang (miliar US$)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000045
-:datain_000045 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 0.8 - 1.2" ,
-                       "2023 : 1.2 - 3.7" ;
-               rdfs:label "Pertumbuhan ekspor nonmigas (%)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000046
-:datain_000046 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 1.8 - 3.6" ,
-                       "2023 : 3.5 -7.4" ;
-               rdfs:label "Jumlah wisatawan  mancanegara (juta kunjungan)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000047
-:datain_000047 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 633 - 703" ,
-                       "2023 : 1200 - 1400" ;
-               rdfs:label "Jumlah kunjungan wisatawan nusantara  (juta perjalanan)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000048
-:datain_000048 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 8.2 - 10.1" ,
-                       "2023 : 8.5 - 10.7" ;
-               rdfs:label "Pertumbuhan ekspor produk industri berteknologi tinggi (%)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000049
-:datain_000049 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 4.55 - 4.56" ,
-                       "2023 : 4.15 - 4.21" ;
-               rdfs:label "Kontribusi sektor jasa keuangan/PDB (%)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000050
-:datain_000050 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 3.4" ,
-                       "2023 : 3.4" ;
-               rdfs:label "Skor logistic  performance index (skor)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000051
-:datain_000051 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 48.3 -49.4" ,
-                       "2023 : 48.2 - 48.9" ;
-               rdfs:label "Rasio M2/PDB (%)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000052
-:datain_000052 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : N/A" ,
-                       "2023 : 29 -34" ;
-               rdfs:label "Peringkat travel and tourism development index (peringkat)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000053
-:datain_000053 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 66" ,
-                       "2023 : 96" ;
-               rdfs:label "Pembaruan sistem inti administrasi perpajakan (core tax administration system)  (%"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000054
-:datain_000054 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : menurun" ,
-                       "2023 : menurun" ;
-               rdfs:label "Imbal hasil (yield) surat berharga negara (%)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000055
-:datain_000055 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 28.94" ,
-                       "2023 : 31.94" ;
-               rdfs:label "Rasio TKDD yang berbasis kinerja terhadap TKDD meningkat (%)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#datain_000056
-:datain_000056 rdf:type owl:NamedIndividual ,
-                        :datain ;
-               :target "2022 : 6" ,
-                       "2023 : 8" ;
-               rdfs:label "Penyediaan data  ekonomi dan sosial  yang berkualitas  (database)"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#mp_000001
-:mp_000001 rdf:type owl:NamedIndividual ,
-                    :MP ;
-           :deskripsi "Akselerasi Pengembangan Energi Terbarukan dan Konservasi  Energi"@en ;
-           rdfs:label "MP1 - PN1 2023" .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#mp_000002
-:mp_000002 rdf:type owl:NamedIndividual ,
-                    :MP ;
-           :deskripsi "Food Estate (Kawasan Sentra Produksi Pangan)" ;
-           rdfs:label "MP2 - PN1 2023"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#mp_000003
-:mp_000003 rdf:type owl:NamedIndividual ,
-                    :MP ;
-           rdfs:label "MP3 - PN1 2023"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#mp_000004
-:mp_000004 rdf:type owl:NamedIndividual ,
-                    :MP ;
-           rdfs:label "MP4 - PN1 2023"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#mp_000005
-:mp_000005 rdf:type owl:NamedIndividual ,
-                    :MP ;
-           rdfs:label "MP5 - PN1 2023"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#mp_000006
-:mp_000006 rdf:type owl:NamedIndividual ,
-                    :MP ;
-           rdfs:label "MP6 - PN1 2023"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#mp_000007
-:mp_000007 rdf:type owl:NamedIndividual ,
-                    :MP ;
-           rdfs:label "MP7 - PN1 2023"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#mp_000008
-:mp_000008 rdf:type owl:NamedIndividual ,
-                    :MP ;
-           rdfs:label "MP7 - PN1 2023"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#mp_000009
-:mp_000009 rdf:type owl:NamedIndividual ,
-                    :MP ;
-           rdfs:label "MP8 - PN1 2023"@en .
-
-
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#mp_000010
-:mp_000010 rdf:type owl:NamedIndividual ,
-                    :MP ;
-           rdfs:label "MP9 - PN1 2023"@en .
-
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000001
 :datain_000001 rdf:type owl:NamedIndividual ,
@@ -655,7 +314,7 @@
                         :datain ;
                :target "2022 : 92.40" ,
                        "2023 :  94.00" ;
-               rdfs:label "Skor Pola Pangan Harapan (PPH)"@en .
+               rdfs:label "Skor Pola Pangan Harapan (PPH)" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000004
@@ -768,6 +427,356 @@
                :target "2022 :  3.57" ,
                        "2023 :  3.63" ;
                rdfs:label "Produktivitas air (water productivity) (m3/kg)g)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000020
+:datain_000020 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 :  103.00 - 105.00" ,
+                       "2023 :  105.00 - 107.00" ;
+               rdfs:label "Nilai Tukar Petani (NTP)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000021
+:datain_000021 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 :  2100" ,
+                       "2023 :  2100" ;
+               rdfs:label "Angka Kecukupan Energi (AKE) (kkal/kapita/hari)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000022
+:datain_000022 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 :  57.00" ,
+                       "2023 :  57.00" ;
+               rdfs:label "Angka Kecukupan Protein (AKP) (gram/kapita/hari)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000023
+:datain_000023 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2023 : 5.20" ,
+                       "2023 : 5.50" ;
+               rdfs:label "Prevalence of Undernourishment (PoU) (%)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000024
+:datain_000024 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 4.50" ,
+                       "2023 : 4.20" ;
+               rdfs:label "Food Insecurity Experience Scale (FIES) (%)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000025
+:datain_000025 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 25.10" ,
+                       "2023 : 29.10" ;
+               rdfs:label "Konservasi kawasan kelautan (juta ha)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000026
+:datain_000026 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : <= 72" ,
+                       "2023 : <= 76" ;
+               rdfs:label "Proporsi tangkan jenis ikan yang berbeda dalam batasan biologis yang aman (%)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000027
+:datain_000027 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 29.42" ,
+                       "2023 : 30.58" ;
+               rdfs:label "Produksi perikanan (juta ton)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000028
+:datain_000028 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 2.60" ,
+                       "2023 : 2.00" ;
+               rdfs:label "Produksi garam (juta ton)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000029
+:datain_000029 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 104.00 - 106.00" ,
+                       "2023 : 107.00 - 108.00" ;
+               rdfs:label "Nilai Tukar Nelayan"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000030
+:datain_000030 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 20.88" ,
+                       "2023 : 21.44" ;
+               rdfs:label "Rasio kredit UMKM terhadap totak kredit perbankan (%)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000031
+:datain_000031 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 2.54" ,
+                       "2023 : 2.74" ;
+               rdfs:label "Pertumbuhan wirausaha (%)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000032
+:datain_000032 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 5.20" ,
+                       "2023 : 5.40" ;
+               rdfs:label "Kontribusi koperasi terhadap PDB (%)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000033
+:datain_000033 rdf:type owl:NamedIndividual ,
+                        :sasaranpp ;
+               :target "2022 : 5.30 - 5.70" ,
+                       "2023 : 5.50 - 5.90" ;
+               rdfs:label "Pertumbuhan PDB industri pengolahan nonmigas (%)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000035
+:datain_000035 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 18.00 - 18.10" ,
+                       "2023 : 18.80" ;
+               rdfs:label "Kontribusi PDB industri pengolahan nonmigas (%)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000036
+:datain_000036 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 1236.0" ,
+                       "2023 : 1279.0" ;
+               rdfs:label "Nilai tambah ekonomi kreatif (triliun rupiah)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000037
+:datain_000037 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 20.90" ,
+                       "2023 : 21.70" ;
+               rdfs:label "Jumlah tenaga kerja  industri pengolahan  (juta orang"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000038
+:datain_000038 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 15.00" ,
+                       "2023 : 15.5" ;
+               rdfs:label "Kontribusi tenaga kerja  di sektor industri  terhadap total pekerja (%)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000039
+:datain_000039 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 21.64" ,
+                       "2023 : 21.93" ;
+               rdfs:label "Jumlah tenaga kerja  pariwisata (juta orang)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000040
+:datain_000040 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 22.29" ,
+                       "2023 : 22.59" ;
+               rdfs:label "Jumlah tenaga kerja  ekonomi kreatif (juta orang)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000041
+:datain_000041 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 968.4" ,
+                       "2023 : 1200 - 1300" ;
+               rdfs:label "Nilai realisasi PMA dan PMDN (triliun rupiah)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000042
+:datain_000042 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 352.5" ,
+                       "2023 : 396 - 420" ;
+               rdfs:label "Nilai realisasi PMA dan PMDN industri  pengolahan (triliun rupiah)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000043
+:datain_000043 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 3.60 - 3.80" ,
+                       "2023 : 3.60 - 3.80" ;
+               rdfs:label "Pertumbuhan PDB pertanian, peternakan, perburuan dan jasa pertanian (%)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000044
+:datain_000044 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 31.4 - 31.7" ,
+                       "2023: 40.4 - 44.9" ;
+               rdfs:label "Neraca perdagangan barang (miliar US$)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000045
+:datain_000045 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 0.8 - 1.2" ,
+                       "2023 : 1.2 - 3.7" ;
+               rdfs:label "Pertumbuhan ekspor nonmigas (%)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000046
+:datain_000046 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 1.8 - 3.6" ,
+                       "2023 : 3.5 -7.4" ;
+               rdfs:label "Jumlah wisatawan  mancanegara (juta kunjungan)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000047
+:datain_000047 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 633 - 703" ,
+                       "2023 : 1200 - 1400" ;
+               rdfs:label "Jumlah kunjungan wisatawan nusantara  (juta perjalanan)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000048
+:datain_000048 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 8.2 - 10.1" ,
+                       "2023 : 8.5 - 10.7" ;
+               rdfs:label "Pertumbuhan ekspor produk industri berteknologi tinggi (%)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000049
+:datain_000049 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 4.55 - 4.56" ,
+                       "2023 : 4.15 - 4.21" ;
+               rdfs:label "Kontribusi sektor jasa keuangan/PDB (%)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000050
+:datain_000050 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 3.4" ,
+                       "2023 : 3.4" ;
+               rdfs:label "Skor logistic  performance index (skor)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000051
+:datain_000051 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 48.3 -49.4" ,
+                       "2023 : 48.2 - 48.9" ;
+               rdfs:label "Rasio M2/PDB (%)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000052
+:datain_000052 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : N/A" ,
+                       "2023 : 29 -34" ;
+               rdfs:label "Peringkat travel and tourism development index (peringkat)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000053
+:datain_000053 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 66" ,
+                       "2023 : 96" ;
+               rdfs:label "Pembaruan sistem inti administrasi perpajakan (core tax administration system)  (%"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000054
+:datain_000054 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : menurun" ,
+                       "2023 : menurun" ;
+               rdfs:label "Imbal hasil (yield) surat berharga negara (%)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000055
+:datain_000055 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 28.94" ,
+                       "2023 : 31.94" ;
+               rdfs:label "Rasio TKDD yang berbasis kinerja terhadap TKDD meningkat (%)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000056
+:datain_000056 rdf:type owl:NamedIndividual ,
+                        :datain ;
+               :target "2022 : 6" ,
+                       "2023 : 8" ;
+               rdfs:label "Penyediaan data  ekonomi dan sosial  yang berkualitas  (database)"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/mp_000001
+:mp_000001 rdf:type owl:NamedIndividual ,
+                    :MP ;
+           :deskripsi "Akselerasi Pengembangan Energi Terbarukan dan Konservasi  Energi"@en ;
+           rdfs:label "MP1 - PN1 2023" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/mp_000002
+:mp_000002 rdf:type owl:NamedIndividual ,
+                    :MP ;
+           :deskripsi "Food Estate (Kawasan Sentra Produksi Pangan)" ;
+           rdfs:label "MP2 - PN1 2023"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/mp_000003
+:mp_000003 rdf:type owl:NamedIndividual ,
+                    :MP ;
+           rdfs:label "MP3 - PN1 2023"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/mp_000004
+:mp_000004 rdf:type owl:NamedIndividual ,
+                    :MP ;
+           rdfs:label "MP4 - PN1 2023"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/mp_000005
+:mp_000005 rdf:type owl:NamedIndividual ,
+                    :MP ;
+           rdfs:label "MP5 - PN1 2023"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/mp_000006
+:mp_000006 rdf:type owl:NamedIndividual ,
+                    :MP ;
+           rdfs:label "MP6 - PN1 2023"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/mp_000007
+:mp_000007 rdf:type owl:NamedIndividual ,
+                    :MP ;
+           rdfs:label "MP7 - PN1 2023"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/mp_000008
+:mp_000008 rdf:type owl:NamedIndividual ,
+                    :MP ;
+           rdfs:label "MP7 - PN1 2023"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/mp_000009
+:mp_000009 rdf:type owl:NamedIndividual ,
+                    :MP ;
+           rdfs:label "MP8 - PN1 2023"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/mp_000010
+:mp_000010 rdf:type owl:NamedIndividual ,
+                    :MP ;
+           rdfs:label "MP9 - PN1 2023"@en .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn1-21
@@ -1076,7 +1085,8 @@ pembangunan ekonomi yang berkelanjutan""" .
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/spp_000003
 :spp_000003 rdf:type owl:NamedIndividual ,
-                     :sasaranpp ;
+                     :sasaranpp ,
+                     <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
             :indikator :datain_000020 ,
                        :datain_000021 ,
                        :datain_000022 ,
@@ -1100,7 +1110,8 @@ pembangunan ekonomi yang berkelanjutan""" .
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/spp_000005
 :spp_000005 rdf:type owl:NamedIndividual ,
-                     :sasaranpp ;
+                     :sasaranpp ,
+                     <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
             :indikator :datain_000030 ,
                        :datain_000031 ,
                        :datain_000032 ;
@@ -1127,7 +1138,8 @@ pembangunan ekonomi yang berkelanjutan""" .
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/spp_000007
 :spp_000007 rdf:type owl:NamedIndividual ,
-                     :sasaranpp ;
+                     :sasaranpp ,
+                     <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
             :indikator :datain_000044 ,
                        :datain_000045 ,
                        :datain_000046 ,
@@ -1139,7 +1151,8 @@ pembangunan ekonomi yang berkelanjutan""" .
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/spp_000008
 :spp_000008 rdf:type owl:NamedIndividual ,
-                     :sasaranpp ;
+                     :sasaranpp ,
+                     <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
             :indikator :datain_000049 ,
                        :datain_000050 ,
                        :datain_000051 ,
