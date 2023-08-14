@@ -45,7 +45,7 @@ def text_to_tagDF(input):
         dftemp = pd.DataFrame([split_res, blank]).T
         dftemp.columns = ['token_' + str(i),'BIO_tag_' + str(i)]
         dflist.append(dftemp)
-    df = pd.concat(dflist, axis=0)
+    df = pd.concat(dflist, axis=1)
     
     return df
         
