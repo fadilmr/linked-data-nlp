@@ -7,9 +7,6 @@ import random
 from matplotlib import pyplot as plt
 
 def custom_optimizer(optimizer, learn_rate=0.0001, beta1=0.9, beta2=0.999, eps=1e-8, L2=1e-6, max_grad_norm=1.0):
-    """
-    Function to customizer spaCy default optimizer
-    """
     
     optimizer.learn_rate = learn_rate
     optimizer.beta1 = beta1
@@ -28,9 +25,7 @@ def train_spacy(data,
                 eps=1e-8, 
                 L2=1e-4, 
                 max_grad_norm=1.0):
-    """Load the model, set up the pipeline and train the entity recognizer."""
     
-        
     TRAIN_DATA = data
     nlp = spacy.blank('id') 
     if 'ner' not in nlp.pipe_names:
@@ -61,22 +56,22 @@ def train_spacy(data,
             # batch up the examples using spaCy's minibatch
             batches = minibatch(TRAIN_DATA, size=compounding(4.0, 64.0, 1.001))
             
-            for batch in batches:
-                texts, annotations = zip(*batch)
-                nlp.update(
-                    texts,  # batch of texts
-                    annotations,  # batch of annotations
-#                     drop=next(dropout),  # dropout - make it harder to memorise data
-                    sgd= optimizer,
-                    losses=losses)
-            
-#             for text, annotations in TRAIN_DATA:
+#             for batch in batches:
+#                 texts, annotations = zip(*batch)
 #                 nlp.update(
-#                     [text],  # batch of texts
-#                     [annotations],  # batch of annotations
-#                     drop=next(dropout),  # dropout - make it harder to memorise data
-#                     sgd=optimizer,  # callable to update weights
+#                     texts,  # batch of texts
+#                     annotations,  # batch of annotations
+# #                     drop=next(dropout),  # dropout - make it harder to memorise data
+#                     sgd= optimizer,
 #                     losses=losses)
+            
+            for text, annotations in TRAIN_DATA:
+                nlp.update(
+                    [text],  # batch of texts
+                    [annotations],  # batch of annotations
+                    # drop=next(dropout),  # dropout - make it harder to memorise data
+                    sgd=optimizer,  # callable to update weights
+                    losses=losses)
 
             print(losses)
             loss_list.append(losses)
