@@ -48,4 +48,3 @@ def text_to_tagDF(input):
     df = pd.concat(dflist, axis=1)
     
     return df
-        
