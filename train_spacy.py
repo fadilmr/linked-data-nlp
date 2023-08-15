@@ -56,22 +56,21 @@ def train_spacy(data,
             # batch up the examples using spaCy's minibatch
             batches = minibatch(TRAIN_DATA, size=compounding(4.0, 64.0, 1.001))
             
-#             for batch in batches:
-#                 texts, annotations = zip(*batch)
-#                 nlp.update(
-#                     texts,  # batch of texts
-#                     annotations,  # batch of annotations
-# #                     drop=next(dropout),  # dropout - make it harder to memorise data
-#                     sgd= optimizer,
-#                     losses=losses)
+            for batch in batches:
+                texts, annotations = zip(*batch)
+                examples = []
+                for text, annots in batch:
+                    examples.append(spacy.training.Example.from_dict(nlp.make_doc(text), annots))
+
+                nlp.update(examples, sgd=optimizer, drop=0.35, losses=losses)
             
-            for text, annotations in TRAIN_DATA:
-                nlp.update(
-                    [text],  # batch of texts
-                    [annotations],  # batch of annotations
-                    # drop=next(dropout),  # dropout - make it harder to memorise data
-                    sgd=optimizer,  # callable to update weights
-                    losses=losses)
+#             for text, annotations in TRAIN_DATA:
+#                 nlp.update(
+#                     [text],  # batch of texts
+#                     [annotations],  # batch of annotations
+#                     drop=next(dropout),  # dropout - make it harder to memorise data
+#                     sgd=optimizer,  # callable to update weights
+#                     losses=losses)
 
             print(losses)
             loss_list.append(losses)
