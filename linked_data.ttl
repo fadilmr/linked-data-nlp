@@ -229,37 +229,37 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/KP
 :KP rdf:type owl:Class ;
     rdfs:comment "Kegiatan Prioritas (KP)" ;
-    rdfs:label "KP" .
+    rdfs:label "kp" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/MP
 :MP rdf:type owl:Class ;
     rdfs:comment "Major Project (MP)" ;
-    rdfs:label "MP" .
+    rdfs:label "mp" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/PN
 :PN rdf:type owl:Class ;
     rdfs:comment "Prioritas Nasional (PN)" ;
-    rdfs:label "PN" .
+    rdfs:label "pn" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/PP
 :PP rdf:type owl:Class ;
     rdfs:comment "Program Prioritas (PP)" ;
-    rdfs:label "PP" .
+    rdfs:label "pp" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/RKP
 :RKP rdf:type owl:Class ;
      rdfs:comment "Rencana Kerja Pemerintah (RKP)" ;
-     rdfs:label "RKP" .
+     rdfs:label "rkp" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/RPJMN
 :RPJMN rdf:type owl:Class ;
        rdfs:comment "Rencana Pembangunan Jangka Menengah Nasional (RPJMN)" ;
-       rdfs:label "RPJMN" .
+       rdfs:label "rpjmn" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain
@@ -271,30 +271,30 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/instansi_pusat
 :instansi_pusat rdf:type owl:Class ;
                 rdfs:comment "Instansi Pusat" ;
-                rdfs:label "IP" .
+                rdfs:label "ip" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/sasaranpn
 :sasaranpn rdf:type owl:Class ;
            rdfs:subClassOf <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
-           rdfs:label "SasaranPN" .
+           rdfs:label "sasaranpn" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/sasaranpp
 :sasaranpp rdf:type owl:Class ;
            rdfs:subClassOf <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
-           rdfs:label "SasaranPP" .
+           rdfs:label "sasaranpp" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/unitkerja
 :unitkerja rdf:type owl:Class ;
            rdfs:comment "Unit Kerja" ;
-           rdfs:label "UK" .
+           rdfs:label "uk" .
 
 
 ###  https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran
 <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> rdf:type owl:Class ;
-                                                          rdfs:label "Sasaran" .
+                                                          rdfs:label "sasaran" .
 
 
 #################################################################
@@ -783,14 +783,14 @@
 :pn1-21 rdf:type owl:NamedIndividual ,
                  :PN ;
         :deskripsi "Memperkuat Ketahanan Ekonomi untuk Pertumbuhan yang Berkualitas dan Berkeadilan" ;
-        rdfs:label "PN 1 2021" .
+        rdfs:label "pn 1 2021" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn1-22
 :pn1-22 rdf:type owl:NamedIndividual ,
                  :PN ;
         :deskripsi "Memperkuat Ketahanan Ekonomi untuk Pertumbuhan yang Berkualitas dan Berkeadilan" ;
-        rdfs:label "PN 1 2022" .
+        rdfs:label "pn 1 2022" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn1-23
@@ -806,189 +806,189 @@
                    :pp_000007 ,
                    :pp_000008 ;
         :deskripsi "Memperkuat Ketahanan Ekonomi untuk Pertumbuhan yang Berkualitas dan Berkeadilan" ;
-        rdfs:label "PN 1 2023" .
+        rdfs:label "pn 1 2023" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn2-21
 :pn2-21 rdf:type owl:NamedIndividual ,
                  :PN ;
         :deskripsi "Mengembangkan Wilayah untuk Mengurangi Kesenjangan dan Menjamin Pemerataan" ;
-        rdfs:label "PN 2 2021" .
+        rdfs:label "pn 2 2021" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn2-22
 :pn2-22 rdf:type owl:NamedIndividual ,
                  :PN ;
         :deskripsi "Mengembangkan Wilayah untuk Mengurangi Kesenjangan dan Menjamin Pemerataan" ;
-        rdfs:label "PN 2 2022" .
+        rdfs:label "pn 2 2022" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn2-23
 :pn2-23 rdf:type owl:NamedIndividual ,
                  :PN ;
         :deskripsi "Mengembangkan Wilayah untuk Mengurangi Kesenjangan dan Menjamin Pemerataan" ;
-        rdfs:label "PN 2 2023" .
+        rdfs:label "pn 2 2023" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn3-21
 :pn3-21 rdf:type owl:NamedIndividual ,
                  :PN ;
         :deskripsi "Meningkatkan Sumber Daya Manusia Berkualitas dan Berdaya Saing" ;
-        rdfs:label "PN 3 2021" .
+        rdfs:label "pn 3 2021" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn3-22
 :pn3-22 rdf:type owl:NamedIndividual ,
                  :PN ;
         :deskripsi "Meningkatkan Sumber Daya Manusia Berkualitas dan Berdaya Saing" ;
-        rdfs:label "PN 3 2022" .
+        rdfs:label "pn 3 2022" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn3-23
 :pn3-23 rdf:type owl:NamedIndividual ,
                  :PN ;
         :deskripsi "Meningkatkan Sumber Daya Manusia Berkualitas dan Berdaya Saing" ;
-        rdfs:label "PN 3 2023" .
+        rdfs:label "pn 3 2023" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn4-21
 :pn4-21 rdf:type owl:NamedIndividual ,
                  :PN ;
         :deskripsi "Revolusi Mental dan Pembangunan Kebudayaan" ;
-        rdfs:label "PN 4 2021" .
+        rdfs:label "pn 4 2021" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn4-22
 :pn4-22 rdf:type owl:NamedIndividual ,
                  :PN ;
         :deskripsi "Revolusi Mental dan Pembangunan Kebudayaan" ;
-        rdfs:label "PN 4 2022" .
+        rdfs:label "pn 4 2022" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn4-23
 :pn4-23 rdf:type owl:NamedIndividual ,
                  :PN ;
         :deskripsi "Revolusi Mental dan Pembangunan Kebudayaan" ;
-        rdfs:label "PN 4 2023" .
+        rdfs:label "pn 4 2023" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn5-21
 :pn5-21 rdf:type owl:NamedIndividual ,
                  :PN ;
         :deskripsi "Memperkuat Infrastruktur untuk Mendukung Pengembangan Ekonomi dan Pelayanan Dasar" ;
-        rdfs:label "PN 5 2021" .
+        rdfs:label "pn 5 2021" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn5-22
 :pn5-22 rdf:type owl:NamedIndividual ,
                  :PN ;
         :deskripsi "Memperkuat Infrastruktur untuk Mendukung Pengembangan Ekonomi dan Pelayanan Dasar" ;
-        rdfs:label "PN 5 2022" .
+        rdfs:label "pn 5 2022" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn5-23
 :pn5-23 rdf:type owl:NamedIndividual ,
                  :PN ;
         :deskripsi "Memperkuat Infrastruktur untuk Mendukung Pengembangan Ekonomi dan Pelayanan Dasar" ;
-        rdfs:label "PN 5 2023" .
+        rdfs:label "pn 5 2023" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn6-21
 :pn6-21 rdf:type owl:NamedIndividual ,
                  :PN ;
         :deskripsi "Membangun Lingkungan Hidup, Meningkatkan Ketahanan Bencana, dan Perubahan Iklim" ;
-        rdfs:label "PN 6 2021" .
+        rdfs:label "pn 6 2021" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn6-22
 :pn6-22 rdf:type owl:NamedIndividual ,
                  :PN ;
         :deskripsi "Membangun Lingkungan Hidup, Meningkatkan Ketahanan Bencana, dan Perubahan Iklim" ;
-        rdfs:label "PN 6 2022" .
+        rdfs:label "pn 6 2022" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn6-23
 :pn6-23 rdf:type owl:NamedIndividual ,
                  :PN ;
         :deskripsi "Membangun Lingkungan Hidup, Meningkatkan Ketahanan Bencana, dan Perubahan Iklim" ;
-        rdfs:label "PN 6 2023" .
+        rdfs:label "pn 6 2023" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn7-21
 :pn7-21 rdf:type owl:NamedIndividual ,
                  :PN ;
         :deskripsi "Memperkuat Stabilitas Polhukhankam dan Transformasi Pelayanan Publik" ;
-        rdfs:label "PN 7 2021" .
+        rdfs:label "pn 7 2021" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn7-22
 :pn7-22 rdf:type owl:NamedIndividual ,
                  :PN ;
         :deskripsi "Memperkuat Stabilitas Polhukhankam dan Transformasi Pelayanan Publik" ;
-        rdfs:label "PN 7 2022" .
+        rdfs:label "pn 7 2022" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn7-23
 :pn7-23 rdf:type owl:NamedIndividual ,
                  :PN ;
         :deskripsi "Memperkuat Stabilitas Polhukhankam dan Transformasi Pelayanan Publik" ;
-        rdfs:label "PN 7 2023" .
+        rdfs:label "pn 7 2023" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pp_000001
 :pp_000001 rdf:type owl:NamedIndividual ,
                     :PP ;
            :deskripsi "Pemenuhan Kebutuhan Energi dengan Mengutamakan Peningkatan Energi Baru Terbarukan (EBT)"@en ;
-           rdfs:label "PP 1 - PN 1 2023" .
+           rdfs:label "pp 1 - pn 1 2023" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pp_000002
 :pp_000002 rdf:type owl:NamedIndividual ,
                     :PP ;
            :deskripsi "Peningkatan kuantitas/ketahanan air untuk mendukung pertumbuhan ekonomi"@en ;
-           rdfs:label "PP 2 - PN 1 2023" .
+           rdfs:label "pp 2 - pn 1 2023" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pp_000003
 :pp_000003 rdf:type owl:NamedIndividual ,
                     :PP ;
            :deskripsi "Peningkatan ketersediaan, akses, dan kualitas konsumsi pangan"@en ;
-           rdfs:label "PP 3 - PN 1 2023" .
+           rdfs:label "pp 3 - pn 1 2023" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pp_000004
 :pp_000004 rdf:type owl:NamedIndividual ,
                     :PP ;
            :deskripsi "Peningkatan pengelolaan kemaritiman, perikanan, dan kelautan"@en ;
-           rdfs:label "PP 4 - PN 1 2023" .
+           rdfs:label "pp 4 - pn 1 2023" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pp_000005
 :pp_000005 rdf:type owl:NamedIndividual ,
                     :PP ;
            :deskripsi "Penguatan kewirausahaan, Usaha Mikro, Kecil Menengah (UMKM) dan koperasi"@en ;
-           rdfs:label "PP 5 - PN 1 2023" .
+           rdfs:label "pp 5 - pn 1 2023" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pp_000006
 :pp_000006 rdf:type owl:NamedIndividual ,
                     :PP ;
            :deskripsi "Peningkatan nilai tambah, lapangan kerja, dan investasi di sektor riil, dan industrialisasi"@en ;
-           rdfs:label "PP 6 - PN 1 2023" .
+           rdfs:label "pp 6 - pn 1 2023" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pp_000007
 :pp_000007 rdf:type owl:NamedIndividual ,
                     :PP ;
            :deskripsi "Peningkatan ekspor bernilai tambah tinggi dan penguatan Tingkat Kandungan Dalam Negeri (TKDN)"@en ;
-           rdfs:label "PP 7 - PN 1 2023" .
+           rdfs:label "pp 7 - pn 1 2023" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pp_000008
 :pp_000008 rdf:type owl:NamedIndividual ,
                     :PP ;
            :deskripsi "Penguatan pilar pertumbuhan dan daya saing ekonomi"@en ;
-           rdfs:label "PP 8 - PN 1 2023" .
+           rdfs:label "pp 8 - pn 1 2023" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/rkp2021
@@ -997,7 +997,7 @@
          :penjabaran :rpjmn20-24 ;
          :deskripsi "Rencana Kerja Pemerintah Tahun 2021 merupakan dokumen perencanaan pembangunan tahunan yang disusun sebagai penjabaran dari Rencana Pembangunan Jangka Menengah Nasional (RPJMN) Tahun 2020-2024 dengan mengusung tema: Mempercepat Pemulihan Ekonomi dan Reformasi Sosial" ;
          :gambar "https://perpustakaan.bappenas.go.id/e-library/file_upload/koleksi/migrasi-data-publikasi/gambar/rkp/rkp_2021.jpg" ;
-         rdfs:label "Rencana Kerja Pemerintah Tahun 2021" .
+         rdfs:label "rkp 2021" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/rkp2022
@@ -1006,7 +1006,7 @@
          :penjabaran :rpjmn20-24 ;
          :deskripsi "Rencana Kerja Pemerintah Tahun 2022 merupakan dokumen perencanaan pembangunan tahunan yang disusun sebagai penjabaran dari Rencana Pembangunan Jangka Menengah Nasional (RPJMN) Tahun 2020-2024 dengan mengusung tema: Pemulihan Ekonomi dan Reformasi Struktural" ;
          :gambar "https://perpustakaan.bappenas.go.id/e-library/file_upload/koleksi/migrasi-data-publikasi/gambar/rkp/Cover%20Narasi%20Pemutakhiran%20RKP%202022.jpg" ;
-         rdfs:label "Rencana Kerja Pemerintah Tahun 2022" .
+         rdfs:label "rkp 2022" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/rkp2023
@@ -1022,7 +1022,7 @@
              :pn7-23 ;
          :deskripsi "Rencana Kerja Pemerintah Tahun 2023 merupakan dokumen perencanaan pembangunan tahunan yang disusun sebagai penjabaran dari Rencana Pembangunan Jangka Menengah Nasional (RPJMN) Tahun 2020-2024 dengan mengusung tema: Peningkatan Produktivitas untuk Transformasi Ekonomi yang Inklusif dan Berkelanjutan" ;
          :gambar "https://perpustakaan.bappenas.go.id/e-library/file_upload/koleksi/migrasi-data-publikasi/file/Unit_Kerja/Dit%20Evaluasi%2C%20dan%20Pengendalian%20Penyusunan%20Perencanaan%20Pembangunan/Konsolidasi%20RKP%202023.jpg" ;
-         rdfs:label "Rencana Kerja Pemerintah Tahun 2023" .
+         rdfs:label "rkp 2023" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/rpjmn20-24
@@ -1033,7 +1033,7 @@
                         :rkp2023 ;
             :deskripsi "Rencana Pembangunan Jangka Menengah Nasional (RPJMN) Tahun 2020-2024 merupakan sebuah dokumen perencanaan pembangunan 5 (lima) tahunan yang disusun sebagai landasan dan pedoman pelaksanaan perencanaan pembangunan selama periode 2020-2024." ;
             :gambar "https://perpustakaan.bappenas.go.id/e-library/file_upload/koleksi/migrasi-data-publikasi/gambar/rpjmn/RPJMN-2020-2024.jpg" ;
-            rdfs:label "Rencana Pembangunan Jangka Menengah Nasional Tahun 2020-2024" .
+            rdfs:label "rpjmn 20-24" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/spn00000001
