@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FastAPI Integration</title>
+</head>
+<body>
+    <input type="text" id="queryInput" placeholder="Enter your query">
+    <button id="submitButton">Submit</button>
+    <div id="resultContainer"></div>
+    
+    <script>
+        document.getElementById("submitButton").addEventListener("click", function () {
+            const queryInput = document.getElementById("queryInput").value;
+
+            fetch("http://localhost:8000/execute-query", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ query: queryInput })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Response from backend:", data);
+                document.getElementById("resultContainer").innerText = data.message;
+            })
+            .catch(error => {
+                console.error("An error occurred:", error);
+            });
+        });
+    </script>
+</body>
+</html>

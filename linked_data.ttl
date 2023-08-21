@@ -456,8 +456,8 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000023
 :datain_000023 rdf:type owl:NamedIndividual ,
                         :datain ;
-               :target "2023 : 5.20" ,
-                       "2023 : 5.50" ;
+               :target "2023 : 5.50" ,
+                       "2022 : 5.20" ;
                rdfs:label "Prevalence of Undernourishment (PoU) (%)"@en .
 
 
