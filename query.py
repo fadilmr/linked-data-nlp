@@ -43,17 +43,21 @@ def get_query(text):
         relation_uri = URIRef(f"table:{relation}")
         query = sparql_query.replace("?searchPattern", f"'{search_pattern}'").replace("?relation", f"{relation_uri}")
         results = g.query(query)
+        extracted_data = []
         for row in results:
             target = row['object'].value
             if target_year in target:
                 indikator = row['subject'].value
-                print(indikator, ", ", target)
+                extracted_data.append({"subject": indikator, "object": target})
+        return extracted_data
 
     elif keywords[0].lower() == "apa":
         # relation
         if keywords[3][:2].lower() == "pn" or keywords[3].lower() == "prioritas" and keywords[4].lower() == "nasional":
             relation = "pn"
         elif keywords[2][:3].lower() == "rkp" or keywords[3].lower() == "rencana" and keywords[4].lower() == "kerja" and keywords[5].lower() == "pemerintah":
+            relation = "dijabarkan"
+        elif keywords[2][:3].lower() == "rpjmn" or keywords[3].lower() == "rencana" and keywords[4].lower() == "pembangunan" and keywords[5].lower() == "jangka" and keywords[6].lower() == "menengah" and keywords[7].lower() == "nasional":
             relation = "penjabaran"
 
         # search pattern
@@ -62,6 +66,8 @@ def get_query(text):
             search_pattern = search_pattern.replace("prioritas nasional", "pn")
         if "rencana kerja pemerintah" in search_pattern.lower():
             search_pattern = search_pattern.replace("rencana kerja pemerintah", "rkp")
+        if "rencana pembangunan jangka menengah nasional" in search_pattern.lower():
+            search_pattern = search_pattern.replace("rencana pembangunan jangka menengah nasional", "rpjmn")
 
         # target year
         target_year = " ".join(keywords[-1:])
@@ -78,11 +84,16 @@ def get_query(text):
         }
         """
 
-    relation_uri = URIRef(f"table:{relation}")
-    query = sparql_query.replace("?searchPattern", f"'{search_pattern}'").replace("?relation", f"{relation_uri}")
-    results = g.query(query)
- 
-    print(results)
+        relation_uri = URIRef(f"table:{relation}")
+        query = sparql_query.replace("?searchPattern", f"'{search_pattern}'").replace("?relation", f"{relation_uri}")
+        results = g.query(query)
+        for row in results:
+            target = row['object'].value
+            if target_year in target:
+                indikator = row['subject'].value
+                extracted_data.append({"subject": indikator, "object": target})
+        return extracted_data
+    
     # for row in results:
     #     object = row['object'].value
     #     if target_year in object and object not in seen_targets:
