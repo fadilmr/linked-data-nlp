@@ -86,7 +86,7 @@ def get_query(text):
         WHERE {
             ?program rdfs:label ?programtitle .
             ?temp ?relation ?program .
-            ?temp rdfs:label ?subject .
+            ?temp table:deskripsi ?subject .
             FILTER (?programtitle = ?searchPattern)
         }
         """

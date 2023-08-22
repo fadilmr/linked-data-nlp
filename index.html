@@ -3,23 +3,62 @@
 <head>
     <title>Linked Data Implementation</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #queryInput {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 30%;
+        }
+
+        #submitButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
         #resultContainer {
             display: grid;
             grid-template-columns: repeat(2, 1fr); /* Two columns in the grid */
-            gap: 10px; /* Gap between grid items */
+            gap: 20px; /* Gap between grid items */
+            margin-top: 20px;
         }
 
         .grid-item {
             border: 1px solid #ccc;
-            padding: 10px;
-            background-color: #f2f2f2; /* Grayish background color */
+            padding: 20px;
+            background-color: #ffffff; /* White background color */
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
-    <input type="text" id="queryInput" placeholder="Enter your query">
-    <button id="submitButton">Submit</button>
-    <div id="resultContainer"></div>
+    <div id="container">
+        <input type="text" id="queryInput" placeholder="Enter your query">
+        <button id="submitButton">Submit</button>
+        <div id="resultContainer"></div>
+    </div>
     
     <script>
         document.getElementById("submitButton").addEventListener("click", function () {
