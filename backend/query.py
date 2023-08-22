@@ -114,3 +114,26 @@ def get_query(text):
     #         subject = row['subject'].value
     #         print(subject, ", ", object)
     #         seen_targets.add(object)
+
+def get_details(text):
+    g = Graph()
+    g.parse("linked_data.ttl", format="turtle")
+    keywords = text
+
+    sparql_query = """
+    PREFIX table: <http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+    SELECT ?subject ?object
+    WHERE {
+        ?program rdfs:label ?programtitle .
+        ?sasaran ?relation ?program .
+        ?sasaran table:indikator ?temp .
+        ?temp rdfs:label ?subject .
+        ?temp table:target ?object
+        FILTER (?programtitle = ?searchPattern)
+
+    }
+    """
+    

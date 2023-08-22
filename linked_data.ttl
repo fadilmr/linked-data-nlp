@@ -12,6 +12,11 @@
 #    Annotation properties
 #################################################################
 
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#judul
+:judul rdf:type owl:AnnotationProperty ;
+       rdfs:label "Judul" .
+
+
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/deskripsi
 :deskripsi rdf:type owl:AnnotationProperty ;
            rdfs:label "Deskripsi" .
@@ -352,8 +357,8 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000009
 :datain_000009 rdf:type owl:NamedIndividual ,
                         :datain ;
-               :target "2023 : 5.00 - 6.00" ,
-                       "2023 : 5.30 - 5.70" ;
+               :target "2023 : 5.30 - 5.70" ,
+                       "2022 : 5.00 - 6.00" ;
                rdfs:label "Pertumbuhan PDB industri pengolahan (%)"@en .
 
 

@@ -34,3 +34,12 @@ def execute_query(query_input: QueryInput):
         return {"error":"False", "data":result}
     except Exception as e:
         return {"error":"True", "message":str(e)}
+
+@app.post("/execute-query-details")
+def execute_query_details(query_input: QueryInput):
+    try:
+        query = query_input.query
+        result = get_query(query)
+        return {"error":"False", "data":result}
+    except Exception as e:
+        return {"error":"True", "message":str(e)}

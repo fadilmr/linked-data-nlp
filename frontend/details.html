@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Details Page</title>
+</head>
+<body>
+    <h1>Details Page</h1>
+    <p>This is the information or description about the data:</p>
+    <p id="details"></p>
+    
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const subject = urlParams.get('subject');
+        
+        const detailsElement = document.getElementById('details');
+
+        fetch(`http://localhost:8000/get-details?subject=${encodeURIComponent(subject)}`)
+            .then(response => response.json())
+            .then(data => {
+                detailsElement.textContent = data.message;
+            })
+            .catch(error => {
+                console.error("An error occurred:", error);
+            });
+    </script>
+</body>
+</html>
