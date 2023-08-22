@@ -52,16 +52,21 @@ def get_query(text):
         return extracted_data
 
     elif keywords[0].lower() == "apa":
+        relation = ""
         # relation
-        if keywords[3][:2].lower() == "pn" or keywords[3].lower() == "prioritas" and keywords[4].lower() == "nasional":
-            relation = "pn"
-        elif keywords[2][:3].lower() == "rkp" or keywords[3].lower() == "rencana" and keywords[4].lower() == "kerja" and keywords[5].lower() == "pemerintah":
+        if keywords[2].lower() == "pn" or keywords[2].lower() == "prioritas" and keywords[3].lower() == "nasional":
+            relation = "pndalam"
+        elif keywords[3].lower() == "rkp" or keywords[3].lower() == "rencana" and keywords[4].lower() == "kerja" and keywords[5].lower() == "pemerintah":
             relation = "dijabarkan"
-        elif keywords[2][:3].lower() == "rpjmn" or keywords[3].lower() == "rencana" and keywords[4].lower() == "pembangunan" and keywords[5].lower() == "jangka" and keywords[6].lower() == "menengah" and keywords[7].lower() == "nasional":
+        elif keywords[2].lower() == "rpjmn" or keywords[2].lower() == "rencana" and keywords[3].lower() == "pembangunan" and keywords[4].lower() == "jangka" and keywords[5].lower() == "menengah" and keywords[6].lower() == "nasional":
             relation = "penjabaran"
 
         # search pattern
-        search_pattern = " ".join(keywords[3:])
+        if relation == "dijabarkan" or relation == "pndalam":
+            search_pattern = " ".join(keywords[3:])
+        else:
+            search_pattern = " ".join(keywords[2:])
+
         if "prioritas nasional" in search_pattern.lower():
             search_pattern = search_pattern.replace("prioritas nasional", "pn")
         if "rencana kerja pemerintah" in search_pattern.lower():
@@ -77,22 +82,31 @@ def get_query(text):
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-        SELECT ?subject ?object
+        SELECT ?subject
         WHERE {
-            ?subject ?relation ?object .
-            FILTER (?object = ?searchPattern)
+            ?program rdfs:label ?programtitle .
+            ?temp ?relation ?program .
+            ?temp rdfs:label ?subject .
+            FILTER (?programtitle = ?searchPattern)
         }
         """
 
         relation_uri = URIRef(f"table:{relation}")
         query = sparql_query.replace("?searchPattern", f"'{search_pattern}'").replace("?relation", f"{relation_uri}")
         results = g.query(query)
-        for row in results:
-            target = row['object'].value
-            if target_year in target:
-                indikator = row['subject'].value
-                extracted_data.append({"subject": indikator, "object": target})
-        return extracted_data
+        extracted_data = []
+        if relation == "pn":
+            for row in results:
+                subject = row['subject'].value
+                if target_year in target:
+                    extracted_data.append({"subject": subject,})
+            return extracted_data
+        else:
+            for row in results:
+                object = row['subject'].value
+                extracted_data.append({"subject": object})
+            return extracted_data
+
     
     # for row in results:
     #     object = row['object'].value

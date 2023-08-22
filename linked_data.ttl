@@ -456,8 +456,8 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000023
 :datain_000023 rdf:type owl:NamedIndividual ,
                         :datain ;
-               :target "2023 : 5.50" ,
-                       "2022 : 5.20" ;
+               :target "2022 : 5.20" ,
+                       "2023 : 5.50" ;
                rdfs:label "Prevalence of Undernourishment (PoU) (%)"@en .
 
 
@@ -826,6 +826,7 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn2-23
 :pn2-23 rdf:type owl:NamedIndividual ,
                  :PN ;
+        :pndalam :rkp2023 ;
         :deskripsi "Mengembangkan Wilayah untuk Mengurangi Kesenjangan dan Menjamin Pemerataan" ;
         rdfs:label "pn 2 2023" .
 
@@ -847,6 +848,7 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn3-23
 :pn3-23 rdf:type owl:NamedIndividual ,
                  :PN ;
+        :pndalam :rkp2023 ;
         :deskripsi "Meningkatkan Sumber Daya Manusia Berkualitas dan Berdaya Saing" ;
         rdfs:label "pn 3 2023" .
 
@@ -868,6 +870,7 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn4-23
 :pn4-23 rdf:type owl:NamedIndividual ,
                  :PN ;
+        :pndalam :rkp2023 ;
         :deskripsi "Revolusi Mental dan Pembangunan Kebudayaan" ;
         rdfs:label "pn 4 2023" .
 
@@ -889,6 +892,7 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn5-23
 :pn5-23 rdf:type owl:NamedIndividual ,
                  :PN ;
+        :pndalam :rkp2023 ;
         :deskripsi "Memperkuat Infrastruktur untuk Mendukung Pengembangan Ekonomi dan Pelayanan Dasar" ;
         rdfs:label "pn 5 2023" .
 
@@ -910,6 +914,7 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn6-23
 :pn6-23 rdf:type owl:NamedIndividual ,
                  :PN ;
+        :pndalam :rkp2023 ;
         :deskripsi "Membangun Lingkungan Hidup, Meningkatkan Ketahanan Bencana, dan Perubahan Iklim" ;
         rdfs:label "pn 6 2023" .
 
@@ -931,6 +936,7 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pn7-23
 :pn7-23 rdf:type owl:NamedIndividual ,
                  :PN ;
+        :pndalam :rkp2023 ;
         :deskripsi "Memperkuat Stabilitas Polhukhankam dan Transformasi Pelayanan Publik" ;
         rdfs:label "pn 7 2023" .
 

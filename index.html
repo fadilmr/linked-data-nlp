@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>FastAPI Integration</title>
+    <title>Linked Data Implementation</title>
+    <style>
+        #resultContainer {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two columns in the grid */
+            gap: 10px; /* Gap between grid items */
+        }
+
+        .grid-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f2f2f2; /* Grayish background color */
+        }
+    </style>
 </head>
 <body>
     <input type="text" id="queryInput" placeholder="Enter your query">
@@ -23,14 +36,24 @@
             .then(data => {
                 console.log("Response from backend:", data);
     
-                // Assuming data.data is the array of dictionaries
                 const resultContainer = document.getElementById("resultContainer");
-                resultContainer.innerHTML = "";  // Clear previous content
+                resultContainer.innerHTML = "";
     
-                // Iterate over the array and generate output
-                for (const item of data.data) {
+                if (data.data) {
+                    for (const item of data.data) {
+                        const div = document.createElement("div");
+                        div.className = "grid-item"; 
+                        if (item.object) {
+                            div.textContent = `${item.subject} ,  ${item.object}`;
+                        } else {
+                            div.textContent = item.subject;
+                        }
+                        resultContainer.appendChild(div);
+                    }
+                } else {
                     const div = document.createElement("div");
-                    div.textContent = `${item.subject} ,  ${item.object}`;
+                    div.className = "grid-item";
+                    div.textContent = data.message;
                     resultContainer.appendChild(div);
                 }
             })
