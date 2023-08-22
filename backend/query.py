@@ -121,19 +121,49 @@ def get_details(text):
     keywords = text
 
     sparql_query = """
-    PREFIX table: <http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/>
-    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX table: <http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-    SELECT ?subject ?object
-    WHERE {
-        ?program rdfs:label ?programtitle .
-        ?sasaran ?relation ?program .
-        ?sasaran table:indikator ?temp .
-        ?temp rdfs:label ?subject .
-        ?temp table:target ?object
-        FILTER (?programtitle = ?searchPattern)
-
-    }
+        SELECT ?individual ?predicate ?relatedIndividual
+        WHERE {
+            ?individual ?predicate ?relatedIndividual .
+            FILTER (str(?individual) = ?individualUri)
+        }
     """
+    individual_uri = "http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/" + keywords
+    query = sparql_query.replace("?individualUri", f"'{individual_uri}'")
+    results = g.query(query)
+    extracted_data = []
+    for row in results:
+        predicate = row['predicate']
+        related_individual = row['relatedIndividual']
+        extracted_data.append({"predicate": predicate, "relatedIndividual": related_individual})
+    return extracted_data
+
     
+def get_class():
+    g = Graph()
+    g.parse("linked_data.ttl", format="turtle")
+    
+    sparql_query = """
+        PREFIX owl: <http://www.w3.org/2002/07/owl#>
+        PREFIX table: <http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>    
+        SELECT DISTINCT ?class ?label ?judul
+        WHERE {
+            ?class a owl:Class.
+            ?class rdfs:label ?label .
+            ?class table:judul ?judul .
+        }
+    """
+
+    results = g.query(sparql_query)
+    extracted_data = []
+    for row in results:
+        class_name = row['class'].split("#")[1]
+        label = row['label']
+        judul = row['judul']
+        extracted_data.append({"class": class_name, "label": label, "judul": judul})
+    return extracted_data

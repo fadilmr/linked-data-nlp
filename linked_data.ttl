@@ -12,11 +12,6 @@
 #    Annotation properties
 #################################################################
 
-###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#judul
-:judul rdf:type owl:AnnotationProperty ;
-       rdfs:label "Judul" .
-
-
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/deskripsi
 :deskripsi rdf:type owl:AnnotationProperty ;
            rdfs:label "Deskripsi" .
@@ -25,6 +20,11 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/gambar
 :gambar rdf:type owl:AnnotationProperty ;
         rdfs:label "Gambar" .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/judul
+:judul rdf:type owl:AnnotationProperty ;
+       rdfs:label "Judul" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/nilai
@@ -233,72 +233,75 @@
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/KP
 :KP rdf:type owl:Class ;
-    rdfs:comment "Kegiatan Prioritas (KP)" ;
+    :judul "Kegiatan Prioritas (KP)" ;
     rdfs:label "kp" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/MP
 :MP rdf:type owl:Class ;
-    rdfs:comment "Major Project (MP)" ;
+    :judul "Major Project (MP)" ;
     rdfs:label "mp" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/PN
 :PN rdf:type owl:Class ;
-    rdfs:comment "Prioritas Nasional (PN)" ;
+    :judul "Prioritas Nasional (PN)" ;
     rdfs:label "pn" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/PP
 :PP rdf:type owl:Class ;
-    rdfs:comment "Program Prioritas (PP)" ;
+    :judul "Program Prioritas (PP)" ;
     rdfs:label "pp" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/RKP
 :RKP rdf:type owl:Class ;
-     rdfs:comment "Rencana Kerja Pemerintah (RKP)" ;
+     :judul "Rencana Kerja Pemerintah (RKP)" ;
      rdfs:label "rkp" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/RPJMN
 :RPJMN rdf:type owl:Class ;
-       rdfs:comment "Rencana Pembangunan Jangka Menengah Nasional (RPJMN)" ;
+       :judul "Rencana Pembangunan Jangka Menengah Nasional (RPJMN)" ;
        rdfs:label "rpjmn" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain
 :datain rdf:type owl:Class ;
-        rdfs:comment "Data dan Informasi" ;
+        :judul "Data dan Informasi" ;
         rdfs:label "datain" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/instansi_pusat
 :instansi_pusat rdf:type owl:Class ;
-                rdfs:comment "Instansi Pusat" ;
+                :judul "Instansi Pusat" ;
                 rdfs:label "ip" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/sasaranpn
 :sasaranpn rdf:type owl:Class ;
            rdfs:subClassOf <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
+           :judul "Sasaran PN" ;
            rdfs:label "sasaranpn" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/sasaranpp
 :sasaranpp rdf:type owl:Class ;
            rdfs:subClassOf <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
+           :judul "Sasaran PP" ;
            rdfs:label "sasaranpp" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/unitkerja
 :unitkerja rdf:type owl:Class ;
-           rdfs:comment "Unit Kerja" ;
+           :judul "Unit Kerja" ;
            rdfs:label "uk" .
 
 
 ###  https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran
 <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> rdf:type owl:Class ;
+                                                          :judul "Sasaran" ;
                                                           rdfs:label "sasaran" .
 
 
@@ -357,8 +360,8 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000009
 :datain_000009 rdf:type owl:NamedIndividual ,
                         :datain ;
-               :target "2023 : 5.30 - 5.70" ,
-                       "2022 : 5.00 - 6.00" ;
+               :target "2022 : 5.00 - 6.00" ,
+                       "2023 : 5.30 - 5.70" ;
                rdfs:label "Pertumbuhan PDB industri pengolahan (%)"@en .
 
 
