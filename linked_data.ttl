@@ -54,7 +54,7 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/indikator
 :indikator rdf:type owl:ObjectProperty ;
            owl:inverseOf :indikatortkt ;
-           rdfs:domain <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
+           rdfs:domain <https://datarenbang.bappenas.go.id/ontologi/ppn#/sasaran> ;
            rdfs:range :datain ;
            rdfs:comment "Indikator" .
 
@@ -62,7 +62,7 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/indikatortkt
 :indikatortkt rdf:type owl:ObjectProperty ;
               rdfs:domain :datain ;
-              rdfs:range <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
+              rdfs:range <https://datarenbang.bappenas.go.id/ontologi/ppn#/sasaran> ;
               rdfs:comment "IndikatorTerkait" .
 
 
@@ -289,7 +289,7 @@
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/sasaranpn
 :sasaranpn rdf:type owl:Class ;
-           rdfs:subClassOf <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
+           rdfs:subClassOf <https://datarenbang.bappenas.go.id/ontologi/ppn#/sasaran> ;
            :deskripsi "Sasaran terkait prioritas nasional (PN)" ;
            :judul "Sasaran PN" ;
            rdfs:label "sasaranpn" .
@@ -297,7 +297,7 @@
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/sasaranpp
 :sasaranpp rdf:type owl:Class ;
-           rdfs:subClassOf <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
+           rdfs:subClassOf <https://datarenbang.bappenas.go.id/ontologi/ppn#/sasaran> ;
            :deskripsi "Sasaran terkait program prioritas (PP)" ;
            :judul "Sasaran PP" ;
            rdfs:label "sasaranpp" .
@@ -310,11 +310,11 @@
            rdfs:label "uk" .
 
 
-###  https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran
-<https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> rdf:type owl:Class ;
-                                                          :deskripsi "Sasaran adalah sesuatu yang dicapai bersamaan dengan tujuan melalui instrumen kebijakan (program) yang berisi satu atau lebih kegiatan yang dilaksanakan oleh instansi pemerintah/lembaga berdasarkan suatu pengalokasian anggaran." ;
-                                                          :judul "Sasaran" ;
-                                                          rdfs:label "sasaran" .
+###  https://datarenbang.bappenas.go.id/ontologi/ppn#/sasaran
+<https://datarenbang.bappenas.go.id/ontologi/ppn#/sasaran> rdf:type owl:Class ;
+                                                           :deskripsi "Sasaran adalah sesuatu yang dicapai bersamaan dengan tujuan melalui instrumen kebijakan (program) yang berisi satu atau lebih kegiatan yang dilaksanakan oleh instansi pemerintah/lembaga berdasarkan suatu pengalokasian anggaran." ;
+                                                           :judul "Sasaran" ;
+                                                           rdfs:label "sasaran" .
 
 
 #################################################################
@@ -555,7 +555,7 @@
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000033
 :datain_000033 rdf:type owl:NamedIndividual ,
-                        :sasaranpp ;
+                        :datain ;
                :target "2022 : 5.30 - 5.70" ,
                        "2023 : 5.50 - 5.90" ;
                rdfs:label "Pertumbuhan PDB industri pengolahan nonmigas (%)"@en .
@@ -1065,7 +1065,7 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/spn00000001
 :spn00000001 rdf:type owl:NamedIndividual ,
                       :sasaranpn ,
-                      <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
+                      <https://datarenbang.bappenas.go.id/ontologi/ppn#/sasaran> ;
              :indikator :datain_000001 ,
                         :datain_000003 ,
                         :datain_000004 ;
@@ -1077,7 +1077,7 @@ pembangunan ekonomi yang berkelanjutan""" .
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/spn_68f97b4f_d887_46f9_949b_65b0febc313f
 :spn_68f97b4f_d887_46f9_949b_65b0febc313f rdf:type owl:NamedIndividual ,
                                                    :sasaranpn ,
-                                                   <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
+                                                   <https://datarenbang.bappenas.go.id/ontologi/ppn#/sasaran> ;
                                           :indikator :datain_000005 ,
                                                      :datain_000006 ,
                                                      :datain_000008 ,
@@ -1112,7 +1112,7 @@ pembangunan ekonomi yang berkelanjutan""" .
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/spp_000003
 :spp_000003 rdf:type owl:NamedIndividual ,
                      :sasaranpp ,
-                     <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
+                     <https://datarenbang.bappenas.go.id/ontologi/ppn#/sasaran> ;
             :indikator :datain_000020 ,
                        :datain_000021 ,
                        :datain_000022 ,
@@ -1137,7 +1137,7 @@ pembangunan ekonomi yang berkelanjutan""" .
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/spp_000005
 :spp_000005 rdf:type owl:NamedIndividual ,
                      :sasaranpp ,
-                     <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
+                     <https://datarenbang.bappenas.go.id/ontologi/ppn#/sasaran> ;
             :indikator :datain_000030 ,
                        :datain_000031 ,
                        :datain_000032 ;
@@ -1165,7 +1165,7 @@ pembangunan ekonomi yang berkelanjutan""" .
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/spp_000007
 :spp_000007 rdf:type owl:NamedIndividual ,
                      :sasaranpp ,
-                     <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
+                     <https://datarenbang.bappenas.go.id/ontologi/ppn#/sasaran> ;
             :indikator :datain_000044 ,
                        :datain_000045 ,
                        :datain_000046 ,
@@ -1178,7 +1178,7 @@ pembangunan ekonomi yang berkelanjutan""" .
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/spp_000008
 :spp_000008 rdf:type owl:NamedIndividual ,
                      :sasaranpp ,
-                     <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
+                     <https://datarenbang.bappenas.go.id/ontologi/ppn#/sasaran> ;
             :indikator :datain_000049 ,
                        :datain_000050 ,
                        :datain_000051 ,
