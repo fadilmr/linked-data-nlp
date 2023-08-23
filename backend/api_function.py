@@ -9,7 +9,7 @@ app = FastAPI()
 
 class QueryInput(BaseModel):
     query: str
-    class_name: str
+    # class_name: str
 
 origins = [
     "http://localhost:8000",
@@ -53,11 +53,10 @@ def execute_query_class():
     except Exception as e:
         return {"error":"True", "message":str(e)}
 
-@app.get("/execute-query-class-details")
-def execute_query_class_details(classname: QueryInput):
+@app.get("/execute-query-class-details/{class_name}")
+def execute_query_class_details(class_name: str):
     try:
-        query = classname.class_name
-        result = get_class_details(query)
-        return {"error":"False", "data":result}
+        result = get_class_details(class_name)
+        return {"error": "False", "data": result}
     except Exception as e:
-        return {"error":"True", "message":str(e)}
+        return {"error": "True", "message": str(e)}
