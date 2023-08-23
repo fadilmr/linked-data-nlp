@@ -233,48 +233,56 @@
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/KP
 :KP rdf:type owl:Class ;
+    :deskripsi "Kegiatan Prioritas adalah kegiatan yang bersifat signifikan dan strategis untuk mencapai Program Prioritas." ;
     :judul "Kegiatan Prioritas (KP)" ;
     rdfs:label "kp" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/MP
 :MP rdf:type owl:Class ;
+    :deskripsi "Proyek Prioritas Strategis/Major Project adalah proyek yang dilaksanakan oleh Pemerintah, Pemerintah Daerah, dan/atau badan usaha yang memiliki sifat strategis untuk peningkatan pertumbuhan dan pemerataan pembangunan dalam rangka meningkatkan kesejahteraan masyarakat dan pembangunan daerah." ;
     :judul "Major Project (MP)" ;
     rdfs:label "mp" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/PN
 :PN rdf:type owl:Class ;
+    :deskripsi "Prioritas Nasional adalah program/kegiatan/proyek untuk pencapaian Sasaran Rencana Pembangunan Jangka Menengah Nasional dan kebijakan Presiden lainnya." ;
     :judul "Prioritas Nasional (PN)" ;
     rdfs:label "pn" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/PP
 :PP rdf:type owl:Class ;
+    :deskripsi "Program Prioritas adalah program yang bersifat signifikan dan strategis untuk mencapai Prioritas Nasional." ;
     :judul "Program Prioritas (PP)" ;
     rdfs:label "pp" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/RKP
 :RKP rdf:type owl:Class ;
+     :deskripsi "Rencana Kerja Pemerintah, yang selanjutnya disebut RKP, adalah dokumen perencanaan nasional untuk periode 1 (satu) tahun." ;
      :judul "Rencana Kerja Pemerintah (RKP)" ;
      rdfs:label "rkp" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/RPJMN
 :RPJMN rdf:type owl:Class ;
+       :deskripsi "Rencana Pembangunan Jangka Menengah Nasional (RPJMN) adalah dokumen perencanaan Nasional untuk periode 5 (lima) tahun." ;
        :judul "Rencana Pembangunan Jangka Menengah Nasional (RPJMN)" ;
        rdfs:label "rpjmn" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain
 :datain rdf:type owl:Class ;
+        :deskripsi "Data adalah catatan atas kumpulan fakta atau deskripsi berupa angka, karakter, simbol, gambar, peta, tanda, isyarat, tulisan, suara, dan/atau bunyi, yang merepresentasikan keadaan sebenarnya atau menunjukkan suatu ide, objek, kondisi, atau situasi. Informasi adalah keterangan, pernyataan, gagasan,  dan tanda-tanda yang mengandung nilai, makna, dan  pesan, baik data, fakta maupun penjelasannya yang  dapat dilihat, didengar, dan dibaca yang disajikan  dalam berbagai kemasan dan format sesuai dengan  perkembangan teknologi informasi dan komunikasi  secara elektronik ataupun nonelektronik" ;
         :judul "Data dan Informasi" ;
         rdfs:label "datain" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/instansi_pusat
 :instansi_pusat rdf:type owl:Class ;
+                :deskripsi "Instansi pusat adalah kementerian, lembaga pemerintah nonkementerian, kesekretariatan lembaga negara, dan kesekretariatan lembaga nonstruktural." ;
                 :judul "Instansi Pusat" ;
                 rdfs:label "ip" .
 
@@ -282,6 +290,7 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/sasaranpn
 :sasaranpn rdf:type owl:Class ;
            rdfs:subClassOf <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
+           :deskripsi "Sasaran terkait prioritas nasional (PN)" ;
            :judul "Sasaran PN" ;
            rdfs:label "sasaranpn" .
 
@@ -289,18 +298,21 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/sasaranpp
 :sasaranpp rdf:type owl:Class ;
            rdfs:subClassOf <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> ;
+           :deskripsi "Sasaran terkait program prioritas (PP)" ;
            :judul "Sasaran PP" ;
            rdfs:label "sasaranpp" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/unitkerja
 :unitkerja rdf:type owl:Class ;
+           :deskripsi "Unit kerja adalah satuan (regu) kerja." ;
            :judul "Unit Kerja" ;
            rdfs:label "uk" .
 
 
 ###  https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran
 <https://datarenbang.bappenas.go.id/ontologi/ppn#sasaran> rdf:type owl:Class ;
+                                                          :deskripsi "Sasaran adalah sesuatu yang dicapai bersamaan dengan tujuan melalui instrumen kebijakan (program) yang berisi satu atau lebih kegiatan yang dilaksanakan oleh instansi pemerintah/lembaga berdasarkan suatu pengalokasian anggaran." ;
                                                           :judul "Sasaran" ;
                                                           rdfs:label "sasaran" .
 

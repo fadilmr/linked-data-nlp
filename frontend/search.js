@@ -16,30 +16,31 @@ document.getElementById("submitButton").addEventListener("click", function () {
         resultContainer.innerHTML = "";
 
         if (data.data) {
+            const gridContainer = document.createElement("div");
+            gridContainer.className = "grid grid-cols-2 gap-4";
+            
             for (const item of data.data) {
-                const div = document.createElement("div");
-                div.className = "grid-item"; 
+                const card = document.createElement("div");
+                card.className = "bg-white p-5 shadow-md rounded-md hover:bg-gray-100";
                 
-                // Check if the item has an object
                 if (item.object) {
-                    // Create a link for the subject
                     const subjectLink = document.createElement("a");
-                    subjectLink.href = `details.html?title=${encodeURIComponent(item.subject)}`; // Pass subject as query parameter
+                    subjectLink.href = `details.html?title=${encodeURIComponent(item.subject)}`;
                     subjectLink.textContent = item.subject;
-                    subjectLink.className = "hover:text-blue-500"; // Add hover effect class
-                    
-                    // Create a paragraph for the object
+                    subjectLink.className = "hover:text-blue-500";
+
                     const objectParagraph = document.createElement("p");
                     objectParagraph.textContent = item.object;
-                    
-                    // Append subject link and object paragraph to the div
-                    div.appendChild(subjectLink);
-                    div.appendChild(objectParagraph);
+
+                    card.appendChild(subjectLink);
+                    card.appendChild(objectParagraph);
                 } else {
-                    div.textContent = item.subject;
+                    card.textContent = item.subject;
                 }
-                resultContainer.appendChild(div);
+                gridContainer.appendChild(card);
             }
+            
+            resultContainer.appendChild(gridContainer);
         } else {
             const div = document.createElement("div");
             div.className = "grid-item";
@@ -51,3 +52,8 @@ document.getElementById("submitButton").addEventListener("click", function () {
         console.error("An error occurred:", error);
     });
 });
+
+
+
+
+

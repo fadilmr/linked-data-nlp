@@ -151,11 +151,12 @@ def get_class():
         PREFIX table: <http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/>
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>    
-        SELECT DISTINCT ?class ?label ?judul
+        SELECT DISTINCT ?class ?label ?judul ?description
         WHERE {
             ?class a owl:Class.
             ?class rdfs:label ?label .
             ?class table:judul ?judul .
+            ?class table:deskripsi ?description .
         }
     """
 
@@ -165,5 +166,6 @@ def get_class():
         class_name = row['class'].split("#")[1]
         label = row['label']
         judul = row['judul']
-        extracted_data.append({"class": class_name, "label": label, "judul": judul})
+        deskripsi = row['description']
+        extracted_data.append({"class": class_name, "label": label, "judul": judul, "deskripsi": deskripsi})
     return extracted_data
