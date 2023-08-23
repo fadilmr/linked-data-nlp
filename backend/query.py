@@ -179,7 +179,8 @@ def get_class_details(text):
             ?class rdfs:label ?label .
             ?class table:judul ?judul .
             ?class table:deskripsi ?description .
-            ?instance a ?class .
+            ?instansi a ?class .
+            ?instansi rdfs:label ?instance .
             FILTER (?label = ?labelUri)
         }
     """
@@ -196,7 +197,7 @@ def get_class_details(text):
         deskripsi = row['description']
         
         if row['instance']:
-            instances.append(row['instance'].split("#")[1])
+            instances.append(row['instance'])
 
     if instances:
         extracted_data.append({"class": class_name, "label": label, "judul": judul, "deskripsi": deskripsi, "instances": instances})

@@ -9,7 +9,7 @@ app = FastAPI()
 
 class QueryInput(BaseModel):
     query: str
-    # class_name: str
+    class_name: str
 
 origins = [
     "http://localhost:8000",
