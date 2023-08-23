@@ -1,9 +1,10 @@
 from rdflib import Graph, Literal, URIRef
 from rdflib.namespace import RDF
 
+g = Graph()
+g.parse("linked_data.ttl", format="turtle")
+
 def get_query(text):
-    g = Graph()
-    g.parse("linked_data.ttl", format="turtle")
     keywords = text.split()
 
     if keywords[0].lower() == "target":
@@ -115,9 +116,7 @@ def get_query(text):
     #         print(subject, ", ", object)
     #         seen_targets.add(object)
 
-def get_details(text):
-    g = Graph()
-    g.parse("linked_data.ttl", format="turtle")
+def get_individual_details(text):
     keywords = text
 
     sparql_query = """
@@ -143,9 +142,6 @@ def get_details(text):
 
     
 def get_class():
-    g = Graph()
-    g.parse("linked_data.ttl", format="turtle")
-    
     sparql_query = """
         PREFIX owl: <http://www.w3.org/2002/07/owl#>
         PREFIX table: <http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/>
@@ -168,4 +164,41 @@ def get_class():
         judul = row['judul']
         deskripsi = row['description']
         extracted_data.append({"class": class_name, "label": label, "judul": judul, "deskripsi": deskripsi})
+    return extracted_data
+
+def get_class_details(text):
+    sparql_query = """
+        PREFIX owl: <http://www.w3.org/2002/07/owl#>
+        PREFIX table: <http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/>
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+        SELECT DISTINCT ?class ?label ?judul ?description ?instance
+        WHERE {
+            ?class a owl:Class.
+            ?class rdfs:label ?label .
+            ?class table:judul ?judul .
+            ?class table:deskripsi ?description .
+            ?instance a ?class .
+            FILTER (?label = ?labelUri)
+        }
+    """
+    label_uri = text
+    query = sparql_query.replace("?labelUri", f"'{label_uri}'")
+    results = g.query(query)
+    extracted_data = []
+    instances = []
+
+    for row in results:
+        class_name = row['class'].split("#")[1]
+        label = row['label']
+        judul = row['judul']
+        deskripsi = row['description']
+        
+        if row['instance']:
+            instances.append(row['instance'].split("#")[1])
+
+    if instances:
+        extracted_data.append({"class": class_name, "label": label, "judul": judul, "deskripsi": deskripsi, "instances": instances})
+
     return extracted_data

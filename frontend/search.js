@@ -16,9 +16,6 @@ document.getElementById("submitButton").addEventListener("click", function () {
         resultContainer.innerHTML = "";
 
         if (data.data) {
-            const gridContainer = document.createElement("div");
-            gridContainer.className = "grid grid-cols-2 gap-4";
-            
             for (const item of data.data) {
                 const card = document.createElement("div");
                 card.className = "bg-white p-5 shadow-md rounded-md hover:bg-gray-100";
@@ -37,10 +34,9 @@ document.getElementById("submitButton").addEventListener("click", function () {
                 } else {
                     card.textContent = item.subject;
                 }
-                gridContainer.appendChild(card);
+                resultContainer.appendChild(card);
             }
             
-            resultContainer.appendChild(gridContainer);
         } else {
             const div = document.createElement("div");
             div.className = "grid-item";
@@ -52,8 +48,3 @@ document.getElementById("submitButton").addEventListener("click", function () {
         console.error("An error occurred:", error);
     });
 });
-
-
-
-
-
