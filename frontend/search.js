@@ -22,7 +22,7 @@ document.getElementById("submitButton").addEventListener("click", function () {
                 
                 if (item.object) {
                     const subjectLink = document.createElement("a");
-                    subjectLink.href = `details.html?title=${encodeURIComponent(item.subject)}`;
+                    subjectLink.href = `individualDetails.html?individual=${encodeURIComponent(item.subject)}`;
                     subjectLink.textContent = item.subject;
                     subjectLink.className = "hover:text-blue-500";
 

@@ -4,12 +4,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from query import get_query, get_individual_details, get_class, get_class_details
 from fastapi import Request
+from urllib.parse import unquote
 
 app = FastAPI()
 
 class QueryInput(BaseModel):
     query: str
-    class_name: str
+    # class_name: str
 
 origins = [
     "http://localhost:8000",
@@ -39,7 +40,9 @@ def execute_query(query_input: QueryInput):
 @app.post("/execute-query-individuals-details")
 def execute_query_details(query_input: QueryInput):
     try:
+
         query = query_input.query
+        query = unquote(query)
         result = get_individual_details(query)
         return {"error":"False", "data":result}
     except Exception as e:

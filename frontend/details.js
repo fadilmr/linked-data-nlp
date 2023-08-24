@@ -12,7 +12,7 @@ window.onload = function () {
 
             if (data.data && data.data.length > 0) {
                 const classData = data.data[0];
-
+                console.log("Class data:", classData);
                 const detailsContainer = document.createElement("div");
                 detailsContainer.className = "bg-white p-4 shadow-md rounded-md";
 
@@ -30,14 +30,13 @@ window.onload = function () {
 
                 detailsContainer.appendChild(judul);
                 detailsContainer.appendChild(deskripsi);
-
                 if (classData.instances && classData.instances.length > 0) {
                     const instanceList = document.createElement("ul");
                     instanceList.className = "text-gray-600 mt-4 ml-4 list-disc";
                     for (const instance of classData.instances) {
                         const instanceItem = document.createElement("li");
                         const instanceLink = document.createElement("a");
-                        instanceLink.href = `individualDetails.html?instance=${encodeURIComponent(instance)}`;
+                        instanceLink.href = `individualDetails.html?individual=${instance}`;
                         instanceLink.textContent = instance;
                         instanceItem.appendChild(instanceLink);
                         instanceList.appendChild(instanceItem);

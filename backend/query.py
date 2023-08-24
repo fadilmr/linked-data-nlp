@@ -124,21 +124,27 @@ def get_individual_details(text):
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-        SELECT ?individual ?predicate ?relatedIndividual
+        SELECT ?relation ?relatedIndividual ?deskripsi
         WHERE {
-            ?individual ?predicate ?relatedIndividual .
-            FILTER (str(?individual) = ?individualUri)
+            ?individual ?predicate ?temp .
+  			?individual rdfs:label ?label .
+  			?temp rdfs:label ?relatedIndividual .
+  			?predicate rdfs:comment ?relation .
+  			?individual table:deskripsi ?deskripsi .
+            FILTER (str(?label) = ?individualUri)
         }
     """
-    individual_uri = "http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/" + keywords
-    query = sparql_query.replace("?individualUri", f"'{individual_uri}'")
+
+    query = sparql_query.replace("?individualUri", f"'{keywords}'")
     results = g.query(query)
     extracted_data = []
     for row in results:
-        predicate = row['predicate']
-        related_individual = row['relatedIndividual']
-        extracted_data.append({"predicate": predicate, "relatedIndividual": related_individual})
+        relation = row['relation'].value
+        related_individual = row['relatedIndividual'].value
+        deskripsi = row['deskripsi'].value
+        extracted_data.append({"relation": relation, "relatedIndividual": related_individual, "deskripsi": deskripsi})
     return extracted_data
+    
 
     
 def get_class():
@@ -173,7 +179,7 @@ def get_class_details(text):
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-        SELECT DISTINCT ?class ?label ?judul ?description ?instance
+        SELECT DISTINCT ?class ?label ?judul ?description ?instance ?instansi
         WHERE {
             ?class a owl:Class.
             ?class rdfs:label ?label .
@@ -189,6 +195,7 @@ def get_class_details(text):
     results = g.query(query)
     extracted_data = []
     instances = []
+    instansi = []
 
     for row in results:
         class_name = row['class'].split("#")[1]
@@ -198,8 +205,9 @@ def get_class_details(text):
         
         if row['instance']:
             instances.append(row['instance'])
+            instansi.append(row['instansi'].split("#")[1])
 
     if instances:
-        extracted_data.append({"class": class_name, "label": label, "judul": judul, "deskripsi": deskripsi, "instances": instances})
+        extracted_data.append({"class": class_name, "label": label, "judul": judul, "deskripsi": deskripsi, "instances": instances, "uri:": instansi})
 
     return extracted_data
