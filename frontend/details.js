@@ -3,7 +3,10 @@ window.onload = function () {
 
     // Get the class name from the query parameter
     const className = getParameterByName("class");
-
+    const backButton = document.getElementById("backButton");
+    backButton.addEventListener("click", () => {
+        window.location.href = "index.html";
+    });
     // Fetch the class details using GET method
     fetch(`http://localhost:8000/execute-query-class-details/${encodeURIComponent(className)}`)
         .then(response => response.json())

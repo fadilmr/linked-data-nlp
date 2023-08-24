@@ -5,11 +5,14 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-700">
-    <div class="flex items-center justify-center h-screen">
-        <div class="w-2/3 bg-gray-300 rounded-lg shadow-lg">
-            <div class="p-6">
-                <h1 class="text-xl font-semibold mb-4">Class Details</h1>
-                <div id="resultContainer" class="p-4"></div>
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="w-full md:w-2/3 bg-gray-300 rounded-lg shadow-lg">
+            <div class="p-8">
+                <h1 class="text-3xl font-semibold mb-6">Class Details</h1>
+                <button id="backButton" class="mb-4 bg-gray-600 px-4 py-2 text-white rounded-md hover:bg-gray-400 hover:text-black focus:outline-none">Home</button>
+                <div id="resultContainer" class="p-4">
+                    <!-- Details will be displayed here -->
+                </div>
             </div>
         </div>
     </div>
