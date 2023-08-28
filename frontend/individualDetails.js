@@ -9,7 +9,7 @@ window.onload = function () {
     });
 
     // Fetch the individual details using POST method
-    fetch("https://linkeddata-1-j8281346.deta.app/execute-query-individuals-details", {
+    fetch("https://backendldt-1-u0544185.deta.app/execute-query-individuals-details", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

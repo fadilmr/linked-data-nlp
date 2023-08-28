@@ -1,5 +1,5 @@
 window.onload = function () {
-    fetch("https://linkeddata-1-j8281346.deta.app/execute-query-class")
+    fetch("https://backendldt-1-u0544185.deta.app/execute-query-class")
         .then(response => response.json())
         .then(data => {
             console.log("Response from backend:", data);

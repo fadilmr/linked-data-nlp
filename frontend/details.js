@@ -8,7 +8,7 @@ window.onload = function () {
         window.location.href = "index.html";
     });
     // Fetch the class details using GET method
-    fetch(`https://linkeddata-1-j8281346.deta.app/execute-query-class-details/${encodeURIComponent(className)}`)
+    fetch(`https://backendldt-1-u0544185.deta.app/execute-query-class-details/${encodeURIComponent(className)}`)
         .then(response => response.json())
         .then(data => {
             console.log("Response from backend:", data);
