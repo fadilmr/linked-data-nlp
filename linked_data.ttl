@@ -321,6 +321,41 @@
 #    Individuals
 #################################################################
 
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#ip_000001
+:ip_000001 rdf:type owl:NamedIndividual ,
+                    :instansi_pusat ;
+           :deskripsi "adalah kementerian yang mempunyai tugas menyelenggarakan urusan pemerintah di bidang perencanaan pembangunan nasional untuk membantu Presiden dalam menyelenggarakan pemerintahan negara." ;
+           rdfs:label "Kementerian Perencanaan Pembangunan Nasional Republik Indonesia/Badan Perencanaan Pembangunan Nasional"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#ip_000002
+:ip_000002 rdf:type owl:NamedIndividual ,
+                    :instansi_pusat ;
+           :deskripsi "adalah kementerian dalam Pemerintah Indonesia yang bertugas menyelenggarakan urusan di bidang pendayagunaan aparatur negara dan reformasi birokrasi." ;
+           rdfs:label "Kementerian Pendayagunaan Aparatur Negara dan Reformasi Birokrasi"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#ip_000003
+:ip_000003 rdf:type owl:NamedIndividual ,
+                    :instansi_pusat ;
+           :deskripsi "adalah kementerian dalam Pemerintah Indonesia yang membidangi urusan pembinaan badan usaha milik negara (BUMN)." ;
+           rdfs:label "Kementerian Badan Usaha Milik Negara"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#ip_000004
+:ip_000004 rdf:type owl:NamedIndividual ,
+                    :instansi_pusat ;
+           :deskripsi "adalah kementerian dalam Pemerintah Indonesia yang membidangi urusan koperasi dan usaha kecil dan menengah" ;
+           rdfs:label "Kementerian Koperasi dan Usaha Kecil dan Menengah"@en .
+
+
+###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#ip_000005
+:ip_000005 rdf:type owl:NamedIndividual ,
+                    :instansi_pusat ;
+           :deskripsi "adalah sebuah kementerian di lingkungan Pemerintah Indonesia yang menyelenggarakan urusan pemerintahan di bidang pariwisata dan tugas pemerintahan di bidang ekonomi kreatif." ;
+           rdfs:label "Kementerian Pariwisata dan Ekonomi Kreatif"@en .
+
+
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/datain_000001
 :datain_000001 rdf:type owl:NamedIndividual ,
                         :datain ;
@@ -825,6 +860,8 @@
                    :pp_000006 ,
                    :pp_000007 ,
                    :pp_000008 ;
+        :punyasasaranpn :spn00000001 ,
+                        :spn_68f97b4f_d887_46f9_949b_65b0febc313f ;
         :deskripsi "Memperkuat Ketahanan Ekonomi untuk Pertumbuhan yang Berkualitas dan Berkeadilan" ;
         rdfs:label "pn 1 2023" .
 
@@ -964,6 +1001,7 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pp_000001
 :pp_000001 rdf:type owl:NamedIndividual ,
                     :PP ;
+           :ppdalam :pn1-23 ;
            :deskripsi "Pemenuhan Kebutuhan Energi dengan Mengutamakan Peningkatan Energi Baru Terbarukan (EBT)"@en ;
            rdfs:label "pp 1 - pn 1 2023" .
 
@@ -971,6 +1009,7 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pp_000002
 :pp_000002 rdf:type owl:NamedIndividual ,
                     :PP ;
+           :ppdalam :pn1-23 ;
            :deskripsi "Peningkatan kuantitas/ketahanan air untuk mendukung pertumbuhan ekonomi"@en ;
            rdfs:label "pp 2 - pn 1 2023" .
 
@@ -978,6 +1017,7 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pp_000003
 :pp_000003 rdf:type owl:NamedIndividual ,
                     :PP ;
+           :ppdalam :pn1-23 ;
            :deskripsi "Peningkatan ketersediaan, akses, dan kualitas konsumsi pangan"@en ;
            rdfs:label "pp 3 - pn 1 2023" .
 
@@ -985,6 +1025,7 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pp_000004
 :pp_000004 rdf:type owl:NamedIndividual ,
                     :PP ;
+           :ppdalam :pn1-23 ;
            :deskripsi "Peningkatan pengelolaan kemaritiman, perikanan, dan kelautan"@en ;
            rdfs:label "pp 4 - pn 1 2023" .
 
@@ -992,6 +1033,7 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pp_000005
 :pp_000005 rdf:type owl:NamedIndividual ,
                     :PP ;
+           :ppdalam :pn1-23 ;
            :deskripsi "Penguatan kewirausahaan, Usaha Mikro, Kecil Menengah (UMKM) dan koperasi"@en ;
            rdfs:label "pp 5 - pn 1 2023" .
 
@@ -999,6 +1041,7 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pp_000006
 :pp_000006 rdf:type owl:NamedIndividual ,
                     :PP ;
+           :ppdalam :pn1-23 ;
            :deskripsi "Peningkatan nilai tambah, lapangan kerja, dan investasi di sektor riil, dan industrialisasi"@en ;
            rdfs:label "pp 6 - pn 1 2023" .
 
@@ -1006,6 +1049,7 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pp_000007
 :pp_000007 rdf:type owl:NamedIndividual ,
                     :PP ;
+           :ppdalam :pn1-23 ;
            :deskripsi "Peningkatan ekspor bernilai tambah tinggi dan penguatan Tingkat Kandungan Dalam Negeri (TKDN)"@en ;
            rdfs:label "pp 7 - pn 1 2023" .
 
@@ -1013,6 +1057,7 @@
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/pp_000008
 :pp_000008 rdf:type owl:NamedIndividual ,
                     :PP ;
+           :ppdalam :pn1-23 ;
            :deskripsi "Penguatan pilar pertumbuhan dan daya saing ekonomi"@en ;
            rdfs:label "pp 8 - pn 1 2023" .
 
@@ -1070,8 +1115,7 @@
                         :datain_000003 ,
                         :datain_000004 ;
              :ssrnpn :pn1-23 ;
-             rdfs:label """Meningkatnya daya dukung dan kualitas sumber daya ekonomi sebagai modalitas bagi 
-pembangunan ekonomi yang berkelanjutan""" .
+             rdfs:label "Meningkatnya daya dukung dan kualitas sumber daya ekonomi sebagai modalitas bagi pembangunan ekonomi yang berkelanjutan" .
 
 
 ###  http://www.semanticweb.org/fadil/ontologies/2023/7/ldt#/spn_68f97b4f_d887_46f9_949b_65b0febc313f

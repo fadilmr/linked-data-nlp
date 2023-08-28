@@ -1,7 +1,7 @@
 document.getElementById("submitButton").addEventListener("click", function () {
     const queryInput = document.getElementById("queryInput").value;
 
-    fetch("http://localhost:8000/execute-query", {
+    fetch("https://linkeddata-1-j8281346.deta.app/execute-query", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
